@@ -64,7 +64,6 @@ input.button,
 .font-alt-1,
 .counter,
 .header-inner-top,
-.lead,
 blockquote{
 	font-family: 'Roboto Condensed', 'Helvetica Neue', sans-serif;
 }
@@ -147,6 +146,10 @@ h6{
 	line-height: 1.2;
 }
 .title-small{
+	font-size: 2.2rem;
+	line-height: 1.5;
+}
+.title-mini{
 	font-size: 1.4rem;
 	line-height: 1.2;
 }
@@ -277,7 +280,10 @@ a.animated-link:hover .text-line,
 	.title-medium{
 		font-size: 2.123rem;
 	}
-	.title-small{
+    .title-small{
+    	font-size: 1.8rem;
+    }
+	.title-mini{
 		font-size: 1.2rem;
 	}
 	.tms-caption.title-xlarge,
