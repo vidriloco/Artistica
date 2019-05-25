@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def generic_title_helper
-    "La Ciudad de México en el tiempo"
+    "Artistica"
   end
   
   def current_route 
