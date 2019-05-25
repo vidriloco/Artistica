@@ -4,13 +4,9 @@ class Picture < ApplicationRecord
   has_one :picture_in_section
   belongs_to :user
   
-  attr_accessor :location_lat
-  attr_accessor :location_lng
-  
-  before_validation :assign_location
   before_validation :assign_list_of_tags
     
-  validates :location_lat, :location_lng, :title, presence: true
+  validates :title, presence: true
   validates :image, attachment_presence: true
   
   has_attached_file :image, default_url: "/images/:style/missing.png"
@@ -22,20 +18,6 @@ class Picture < ApplicationRecord
   
   def self.all_pictures_with(categories)
     Picture.order('pictures.created_at DESC').joins(:categories).select('title', 'year', 'image_file_name', 'image_content_type', 'image_file_size', 'image_updated_at', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id), 'published' => true)
-  end
-  
-  def self.find_nearby(picture, distance_in_meters, results, opts="")
-    lat = picture.location[0]
-    lng = picture.location[1]
-    
-    return [] if lat.nil? && lng.nil?
-    
-    all.limit(results).where("ST_Distance_Sphere(location::geometry, 'POINT(:lat :lng)'::geometry) < :distance AND ST_Distance_Sphere(location::geometry, 'POINT(:lat :lng)'::geometry) > 100", { lat: lat, lng: lng, distance: distance_in_meters }).
-    order("ST_Distance_Sphere(location::geometry, 'POINT(#{lat} #{lng})'::geometry) ASC")
-  end
-  
-  def assign_location
-    self.location = [@location_lat, @location_lng] if !(@location_lat.blank? && @location_lng.blank?)
   end
   
   def assign_list_of_tags
