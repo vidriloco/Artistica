@@ -1,0 +1,41 @@
+<%= render 'shared/header_opaque' %>
+<%= render partial: 'shared/metatags', locals: { seo: @seo } %>
+
+<!-- Content -->
+<div class="content clearfix">
+	<!-- About Intro -->
+	<div class="section-block clearfix no-padding-bottom">
+		<div class="row">
+			
+			<div class="column width-10 offset-1 content-inner blog-regular">
+				<div class="post-info boxed">
+					<div class="row">
+						<div class="column width-6">
+							<div class="actions">
+								<%= link_to "<span class='icon-left-open-mini'></span> Atrás".html_safe, :back %>
+							</div>
+						</div>
+						<div class="column width-6">
+							
+						</div>
+					</div>
+				</div>
+				
+				<article class="post no-margin-bottom">
+					<div class="post-content center">
+						<h2 class="post-title">Las más recientes</h2>
+						<div class="post-info actions">
+							<p>Las fotografías recién añadidas al sitio</p>
+						</div>
+						<br/>
+					</div>
+				</article>
+				
+				
+			</div>
+		
+		</div>
+	</div>
+	<%= render partial: 'pictures/related_pictures', 
+						  locals: { title: "", pictures: @pictures } %>
+</div>

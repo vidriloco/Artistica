@@ -1,0 +1,62 @@
+<%= render 'shared/header_opaque' %>
+<%= render partial: 'shared/metatags', locals: { seo: @article } %>
+
+<!-- Content -->
+<div class="content clearfix">
+	<!-- Intro Title Section 2 -->
+	<div class="section-block intro-title-2" style="background-image: url('<%=  @article.image_url %>')">
+		<div class="row">
+			<div class="column width-12">
+				<div class="title-container">
+					<div class="title-container-inner center color-white">
+						<h1 class="inline no-margin-bottom"><%= @article.title %></h1>
+						<div>
+							<%= render partial: 'shared/ownership_details', locals: { resource_name: "Artículo compartido", resource: @article } %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Intro Title Section 2 End -->
+
+	<!-- Feature Column Section -->
+	<div class="section-block replicable-content no-margin no-padding mt-30">
+		<div class="row">
+			<div class="column width-9 content-inner blog-regular">
+				<p class="lead text-medium mb-110"><%= @article.content.html_safe %></p>
+			</div>
+			<div class="column width-3">
+				<div class="post-info boxed">
+					<div class="row">
+						<div class="column width-12">
+							<div class="actions center">
+								<p>Compartir en</p><%= render partial: 'shared/share_buttons', locals: { sharable_object: @spot_picture } %>
+							</div>
+						</div>
+					</div>
+					<hr/>
+					<div class="row">
+						<div class="column width-12">
+							<div class="actions center">
+								<%= link_to "<span class='icon-left-open-mini'></span> Atrás".html_safe, :back %>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column width-12">
+							<%= render 'ads/responsive_ad' %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="column width-10 offset-1 content-inner blog-regular">
+		
+		<div class="fb-comments"
+		   data-href="<%= seo_for_url(@article) %>"
+		   data-width="100%"></div>
+	</div>
+</div>

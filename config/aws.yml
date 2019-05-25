@@ -1,0 +1,13 @@
+default: &default
+  endpoint: "s3-us-west-1.amazonaws.com"
+  secret: "S1R/CAIUSQl5/15+lvl4OCzjxTESXrN/0y6LdOlB"
+  access: " AKIAQAHYE5XJBPG7A5MK"
+  region: "us-west-1"
+
+development:
+  <<: *default
+  bucket: "tatema-arte"
+
+production:
+  <<: *default
+  bucket: "artistica.gallery"

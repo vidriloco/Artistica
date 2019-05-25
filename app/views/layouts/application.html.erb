@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><%= yield(:page_title) %></title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport">
+	<meta name="twitter:widgets:theme" content="light">
+	<!-- Font -->
+  <%= yield :fonts %>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700%7COpen+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet">
+  
+  <%= csrf_meta_tags %>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places&key=AIzaSyC9lNNwKeP3BMJ3iM6uFlPaLWl6ZHlpH9k&language=en"></script>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= render 'shared/javascripts/analytics' %>
+	<%= render 'shared/javascripts/facebook' %>
+	<%= render 'shared/javascripts/sumo' %>
+  <%= javascript_include_tag 'application' %>
+	
+	<!--[if lt IE 9]>
+    	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <%= yield :canonical_url %>
+  <%= yield :google_metatags %>
+  <%= yield :facebook_metatags %>
+  <%= yield :twitter_metatags %>
+  <%= yield :schema_microdata %>
+  <%= yield :extra_metatags %>
+</head>
+<body class="shop home-page">
+	<%= render 'shared/side-navigation-menu' %>
+	<div class="wrapper reveal-side-navigation">
+		<div class="wrapper-inner">
+			<%= yield %>
+		</div>
+	</div>
+	<%= render 'shared/footer' %>
+	<%= render 'shared/photoswipe' %>
+	<!-- Js -->
+	<%= render 'shared/javascripts/adsense' %>
+	
+</body>
+</html>
