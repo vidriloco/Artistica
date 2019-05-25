@@ -1,0 +1,7 @@
+<% if slide.is_three_lines_style? %>
+  <%= render partial: 'slides/styles/three_headers', locals: { slide: slide } %>
+<% elsif slide.is_two_lines_center_aligned_style? %>
+  <%= render partial: 'slides/styles/two_headers_center_aligned', locals: { slide: slide } %>
+<% else %>
+  <%= render partial: 'slides/styles/two_headers_left_aligned', locals: { slide: slide } %>
+<% end %>

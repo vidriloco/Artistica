@@ -1,24 +1,24 @@
-<li class="tms-slide" data-image data-as-bkg-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.4" data-animation="slideTopBottom">
+<li class="tms-slide" data-image data-as-bkg-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.4">
 	<div class="tms-content">
 		<div class="tms-content-inner left left-on-mobile v-align-middle">
 			<div class="row">
 				<div class="column width-12">
 					<p class="tms-caption color-white title-medium weight-light mb-10" data-no-scale data-animate-in="preset:slideInDownShort;duration:800ms;delay:400ms;">
-						Slide In Top
+						<%= slide.first_heading %>
 					</p>
 					<div class="clear"></div>
 					<h1 class="tms-caption color-white title-large weight-bold mb-50" data-no-scale data-animate-in="preset:slideInUpShort;duration:800ms;delay:100ms;">
-						Slide In Bottom
+						<%= slide.second_heading %>
 					</h1>
 					<div class="clear"></div>
 					<a href="#" class="tms-caption next-full-width-slider button medium text-small text-uppercase border-white color-white bkg-hover-charcoal color-hover-white" 
 						data-animate-in="preset:slideInRightShort;duration:1000ms;delay:1000ms;"
 						data-no-scale>
-						Next Slide
+						Visitar
 					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<img data-src="https://images.unsplash.com/photo-1541878050095-0f86c40a0854?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" data-retina src="https://images.unsplash.com/photo-1541878050095-0f86c40a0854?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""/>
+	<img data-src="<%= slide.image_url %>" data-retina src="<%= slide.image_url %>" alt=""/>
 </li>

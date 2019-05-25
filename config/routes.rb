@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :users
     resources :promoted_categories
     resources :seo_for_pages
+    resources :slides
     root to: "pictures#index"
   end
 

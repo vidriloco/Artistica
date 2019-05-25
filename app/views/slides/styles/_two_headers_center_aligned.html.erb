@@ -1,0 +1,22 @@
+<li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.2">
+	<div class="tms-content">
+		<div class="tms-content-inner center v-align-middle">
+			<div class="row">
+				<div class="column width-6 offset-3 color-white">
+					<h1 class="tms-caption lspacing-large weight-bold no-margin-bottom"
+						data-animate-in="preset:slideInDownShort;duration:600ms;delay:500ms;"
+						data-no-scale>
+            <%= slide.first_heading %>
+					</h1>
+					<div class="clear"></div>
+					<p class="tms-caption weight-light text-uppercase lspacing-medium hide-on-mobile"
+						data-animate-in="preset:slideInDownShort;duration:600ms;delay:300ms;"
+						data-no-scale>
+            <%= slide.second_heading %>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<img data-src="<%= slide.image_url %>" data-retina src="<%= slide.image_url %>" alt=""/>
+</li>

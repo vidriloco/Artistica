@@ -21,6 +21,20 @@ es-MX:
         title: Título
         year: Año
         description: Descripción
+      slide:
+        style: Estilo
+        first_heading: Primer encabezado
+        second_heading: Segundo encabezado
+        third_heading: Tercer encabezado
+        is_enabled: ¿Está visible?
+        group: Grupo
+        url: URL
+        index: Posición
+        image_url: URL de imagen de fondo
+        group_localized: Grupo
+        style_localized: Estilo
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
   administrate:
     actions:
       confirm: ¿Estás seguro?

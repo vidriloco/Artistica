@@ -3,6 +3,18 @@ es-MX:
     share_to: "Compartir"
     twitter: "Tweetear"
   activerecord:
+    attributes:
+      slide:
+        group: Grupo
+        style: Estilo
+    values:
+      slide:
+        groups:
+          landing: "Cortinilla en pagina principal"
+        styles:
+          three_lines: "Tres lineas"
+          two_lines_center_aligned: "Dos lineas centradas"
+          two_lines_left_aligned: "Dos lineas alineadas a la izquierda"
     models:
       user:
         one: Usuario

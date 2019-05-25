@@ -4,7 +4,14 @@
 <!-- Content -->
 <div class="content clearfix">
 
-	<%= render 'slider-pictures' %>
+  <!-- Fullscreen Slider Section -->
+  <section class="section-block featured-media window-height tm-slider-parallax-container">
+  	<div class="tm-slider-container full-width-slider" data-featured-slider data-parallax data-parallax-fade-out data-animation="scaleOut" data-speed="1200" data-scale-under="960">
+  		<ul class="tms-slides">
+	      <%= render @slides %>
+  		</ul>
+  	</div>
+  </section>
 
 	<!-- Recent pictures -->
 	<%= render 'recent-pictures' %>
