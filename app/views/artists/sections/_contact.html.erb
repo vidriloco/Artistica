@@ -1,0 +1,25 @@
+<section class="section-block feature-3 bkg-charcoal">
+	<div class="feature-content">
+		<div class="feature-content-inner left">
+			<div class="row">
+				<div class="column width-12">
+					<h1 class="title-medium mb-20 color-white">Gracias por visitar mi perfil.</h1>
+					<p class="font-alt-1 title-small weight-light color-white hide-on-mobile mb-30">Contáctame si necesitas información sobre alguna de mis obras.</p>
+					<p class="title-small lspacing-medium weight-bold color-white mb-10"><a href="mailto:<%= artist.email %>" class="color-white"><%= artist.email %></a></p>
+					<p class="title-small lspacing-medium color-white mb-10">
+            <% unless artist.phone_number.blank? %>
+						  <span class="color-white"><%= artist.phone_number %></span><br>
+            <% end %>
+					</p>
+          <br/>
+					<ul class="social-list list-horizontal">
+						<li><a href="#"><span class="icon-twitter-with-circle medium color-theme color-hover-grey"></span></a></li>
+						<li><a href="#"><span class="icon-facebook-with-circle medium color-theme color-hover-grey"></span></a></li>
+						<li><a href="#"><span class="icon-dribbble-with-circle medium color-theme color-hover-grey"></span></a></li>
+						<li><a href="#"><span class="icon-linkedin-with-circle medium color-theme color-hover-grey"></span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

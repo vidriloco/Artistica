@@ -1,0 +1,31 @@
+<!-- Header -->
+<header class="header header-fixed header-bottom header-fixed-on-mobile header-transparent" data-sticky-threshold="window-height" data-bkg-threshold="100">
+	<div class="header-inner">
+		<div class="row nav-bar">
+			<div class="column width-12 nav-bar-inner">
+				<div class="logo">
+					<div class="logo-inner">
+						<a href="/"><%= image_tag('logo-dark.png') %></a>
+						<a href="/"><%= image_tag('logo.png') %></a>
+					</div>
+				</div>
+				<nav class="navigation nav-block secondary-navigation nav-right">
+					<ul>
+						<li class="aux-navigation hide">
+							<!-- Aux Navigation -->
+							<a href="#" class="navigation-show side-nav-show nav-icon">
+								<span class="icon-menu"></span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<nav class="navigation nav-block primary-navigation nav-right no-margin-right">
+					<ul>
+						<%= render 'shared/header-entries' %>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- Header End -->

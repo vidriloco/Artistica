@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   namespace :admin do
+    resources :artists
     resources :pictures
     resources :categories
     resources :articles
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'application#index'
   
+  get '/artistas/:slug', to: 'artists#show', as: 'artista'
   get '/nuestra-coleccion', to: redirect('coleccion')
   get '/fotografias', to: redirect('/coleccion')
   get '/fotografias/:id(/:name)', to: 'pictures#show', as: 'picture'

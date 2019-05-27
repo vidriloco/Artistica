@@ -1,0 +1,191 @@
+<%= render 'shared/header_opaque' %>
+
+<!-- Content -->
+<div class="content clearfix">
+
+	<!-- Hero Section 5 -->
+	<section id="about" class="section-block hero-5 window-height right show-media-column-on-mobile bkg-charcoal color-white">
+		<div class="media-column width-6 window-height background-none">
+			<div class="tm-slider-container content-slider window-height" data-animation="slide" data-nav-arrows="false" data-auto-advance data-auto-advance-interval="4000" data-progress-bar="false" data-speed="1000" data-scale-under="0" data-width="722">
+				<ul class="tms-slides">
+					<li class="tms-slide" data-image data-force-fit data-as-bkg-image data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.3" data-animation="scaleOut">
+						<img data-src="<%= @artist.image_url %>" data-retina src="<%= @artist.image_url %>" alt=""/>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column width-5">
+				<div class="hero-content split-hero-content">
+					<div class="hero-content-inner left horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;" data-threshold="0.5">
+						<h1 class="mb-30"><%= @artist.name %><br><span class="opacity-05">La pintora de flores</span></h1>
+						<p class="text-xlarge"><%= @artist.bio %></p>
+            <p class="text-large"><i><%= @artist.list_of_tags %></i></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero Section 5 End -->
+
+	<!-- Content Section -->
+	<div class="section-block replicable-content bkg-white">
+		<div class="row">
+			<div class="column width-12 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;" data-threshold="0.5">
+				<h2 class="mb-30">Recent Work</h2>
+			</div>
+			<div class="column width-5 offset-3 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;delay:200ms;" data-threshold="0.5">
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+			</div>
+			<div class="column width-4 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;delay:400ms;" data-threshold="0.5">
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+			</div>
+		</div>
+	</div>
+	<!-- Content Section End -->
+
+	<!-- Portfolio Grid -->
+	<div class="section-block grid-container fade-in-progressively no-margins no-padding" data-layout-mode="masonry" data-grid-ratio="1.5" data-animate-filter-duration="700" data-set-dimensions data-animate-resize data-animate-resize-duration="0" data-as-bkg-image>
+		<div class="row">
+			<div class="column width-12">
+				<div class="row grid content-grid-3">
+					<div class="grid-item grid-sizer">
+						<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#ffffff" data-hover-bkg-opacity="1">
+							<a class="overlay-link lightbox-link" data-toolbar="zoom" data-group="gallery-1" data-caption="Bunker - Berlin, Germany" href="images/architecture/portfolio/grid/no-margins/project-1-lightbox.jpg">
+								<img src="images/architecture/portfolio/grid/no-margins/project-1-landscape.jpg" alt=""/>
+								<span class="overlay-info">
+									<span>
+										<span>
+											<span class="project-title">Bunker</span>
+											<span class="project-description">Berlin, Germany</span>
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div>
+					<div class="grid-item portrait">
+						<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#ffffff" data-hover-bkg-opacity="1">
+							<img src="images/architecture/portfolio/grid/no-margins/project-3-portrait.jpg" alt=""/>
+						</div>
+						<div class="content-outer">
+							<div class="content-inner color-white">
+								<div class="row">
+									<div class="column width-4 offset-4 center">
+										<a class="lightbox-link icon-play icon-circled border-white bkg-hover-theme color-white color-hover-white circled medium" data-toolbar="zoom" data-group="gallery-1" data-caption="The Building of Munster" href="http://player.vimeo.com/video/119087784?autoplay=1" ></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#ffffff" data-hover-bkg-opacity="1">
+							<a class="overlay-link lightbox-link" data-toolbar="zoom" data-group="gallery-1" data-caption="Gropius - Madrid, Spain" href="images/architecture/portfolio/grid/no-margins/project-2-lightbox.jpg">
+								<img src="images/architecture/portfolio/grid/no-margins/project-2-landscape.jpg" alt=""/>
+								<span class="overlay-info">
+									<span>
+										<span>
+											<span class="project-title">Gropius</span>
+											<span class="project-description">Madrid, Spain</span>
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#ffffff" data-hover-bkg-opacity="1">
+							<a class="overlay-link lightbox-link" data-toolbar="zoom" data-group="gallery-1" data-caption="Schröder - Stockholm, Sweden" href="images/architecture/portfolio/grid/no-margins/project-4-lightbox.jpg">
+								<img src="images/architecture/portfolio/grid/no-margins/project-4-landscape.jpg" alt=""/>
+								<span class="overlay-info">
+									<span>
+										<span>
+											<span class="project-title">Schröder</span>
+											<span class="project-description">Stockholm, Sweden</span>
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#ffffff" data-hover-bkg-opacity="1">
+							<a class="overlay-link lightbox-link" data-group="gallery-1" data-caption="Farnsworth - Plano Il, U.S" href="images/architecture/portfolio/grid/no-margins/project-5-lightbox.jpg">
+								<img src="images/architecture/portfolio/grid/no-margins/project-5-landscape.jpg" alt=""/>
+								<span class="overlay-info">
+									<span>
+										<span>
+											<span class="project-title">Farnsworth</span>
+											<span class="project-description">Plano IL, U.S</span>
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Portfolio Grid End -->
+
+	<!-- Testimonial Section 5 -->
+	<div class="section-block testimonial-5 testimonials-5-about-1">
+		<div id="testimonial-slider-1" class="testimonial-slider tm-slider-container">
+			<ul class="tms-slides">	
+				<li class="tms-slide" data-image>
+					<div class="tms-content-scalable">
+						<div class="row">
+							<div class="column width-8 offset-2">
+								<blockquote class="center large">
+									<p>Incredible work! Best creative experience ever; timely, well executed and one hell of the result. Would recommend Nietszche to anyone who is looking to revamp their identity.
+										<cite>John K. Riley - Harvest Goods.</cite>
+									</p>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="tms-slide" data-image>
+					<div class="tms-content-scalable">
+						<div class="row">
+							<div class="column width-8 offset-2">
+								<blockquote class="center large">
+									<p>A five star agency without doubt. Hire them!
+										<cite>John A. Adams - Repetition</cite>
+									</p>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="tms-slide" data-image>
+					<div class="tms-content-scalable">
+						<div class="row">
+							<div class="column width-8 offset-2">
+								<blockquote class="center large">
+									<p>Creativity redefined. These guys offer a unique approach to every aspect<br> of design and the result is simply stunning.
+										<cite>Jane Lariken - MUD Clothing.</cite>
+									</p>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="tms-slide" data-image>
+					<div class="tms-content-scalable">
+						<div class="row">
+							<div class="column width-8 offset-2">
+								<blockquote class="center large">
+									<p>Design, design and redesign is their motto. Sartre won't stop until they have the perfect match between functionality and esthetic.
+										<cite>Jack Tromso - Orcha Co.</cite>
+									</p>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- Testimonial Section 5 End -->

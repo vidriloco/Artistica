@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190525035016) do
+ActiveRecord::Schema.define(version: 20190525201420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,29 @@ ActiveRecord::Schema.define(version: 20190525035016) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.boolean  "published",          default: true
+  end
+
+  create_table "artists", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.string   "name",                      null: false
+    t.string   "quote",                     null: false
+    t.text     "bio"
+    t.date     "birth_date"
+    t.string   "birth_place",               null: false
+    t.boolean  "shows_contact_information"
+    t.string   "email"
+    t.string   "twitter_username"
+    t.string   "facebook_username"
+    t.string   "phone_number"
+    t.text     "list_of_tags"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["email"], name: "index_artists_on_email", unique: true, using: :btree
+    t.index ["slug"], name: "index_artists_on_slug", unique: true, using: :btree
   end
 
   create_table "categories", force: :cascade do |t|

@@ -2,6 +2,19 @@
 es-MX:
   helpers:
     label:
+      artist:
+        slug: Slug
+        name: Nombre
+        bio: Biografía
+        birth_date: Fecha de nacimiento
+        email: Correo electrónico
+        categories: Categoría
+        birth_place: Lugar de nacimiento
+        twitter_username: Twitter
+        facebook_username: Facebook
+        phone_number: Número de teléfono
+        quote: Pensamiento
+        shows_contact_information: Muestra detalles de contacto
       user:
         created_at: Registrado el
         updated_at: Actualizado el
@@ -21,6 +34,7 @@ es-MX:
         title: Título
         year: Año
         description: Descripción
+        categories: Categorias
       slide:
         style: Estilo
         first_heading: Primer encabezado
