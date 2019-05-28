@@ -3,10 +3,9 @@ class ArtistsController < ApplicationController
   
   def show
     @artist = Artist.where(slug: params[:slug]).first
-    @artworks = @artist.artworks.order('index ASC')
     
-    if @artist.blank?
-      redirect_to root_path
-    end
+    redirect_to(root_path) && return if @artist.blank?
+    
+    @artworks = @artist.artworks.order('index ASC')
   end
 end

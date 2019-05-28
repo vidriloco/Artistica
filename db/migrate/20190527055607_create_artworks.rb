@@ -12,9 +12,7 @@ class CreateArtworks < ActiveRecord::Migration[5.0]
       t.string        :disposition_on_landing_page
       t.boolean       :published
       t.text          :list_of_tags
-      
-      t.attachment    :image
-      
+            
       t.timestamps
     end
   end

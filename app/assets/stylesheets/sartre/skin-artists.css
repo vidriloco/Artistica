@@ -158,9 +158,9 @@ h6{
 }
 
 /* Lead */
+div.lead p,
 .lead,
 blockquote.large{
-    font-family: 'Asap', 'Helvetica Neue', sans-serif;
 	font-size: 2.016rem;
 	font-weight: 300;
 }

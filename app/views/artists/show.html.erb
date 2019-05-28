@@ -69,7 +69,7 @@
 				<h2 class="mb-30">Trayectoria</h2>
 			</div>
 			<div class="column width-5 offset-3 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;delay:200ms;" data-threshold="0.5">
-				<p class="lead"><%= @artist.artwork_details %></p>
+				<p class="lead"><%= @artist.artwork_trajectory %></p>
 			</div>
 			<div class="column width-4 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;delay:400ms;" data-threshold="0.5">
 				<div class="stats-1 left">
@@ -78,7 +78,7 @@
 							<p class="counter">
                 <span class="stat-counter" data-count-from="<%= @artist.artwork_count*0.5.to_int %>" data-count-to="<%= @artist.artwork_count %>"><%= @artist.artwork_count %></span> Obras
               </p>
-							<p class="description"><%= @artist.artwork_details_since %></p>
+							<p class="description"><%= @artist.artwork_trajectory_since %></p>
 						</div>
 					</div>
 				</div>

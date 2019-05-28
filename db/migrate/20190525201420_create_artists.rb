@@ -16,8 +16,10 @@ class CreateArtists < ActiveRecord::Migration[5.0]
       t.string      :phone_number
       
       t.text        :list_of_tags
-      
-      t.attachment  :image
+            
+      t.string      :artwork_trajectory_since
+      t.string      :artwork_count
+      t.string      :artwork_trajectory
       
       t.timestamps
     end
