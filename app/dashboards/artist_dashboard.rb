@@ -11,6 +11,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     tags: Field::HasMany,
     categories: Field::HasMany,
     id: Field::Number,
+    artworks: Field::HasMany,
     slug: Field::String,
     name: Field::String,
     bio: EnrichedTextField,
@@ -57,6 +58,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     :twitter_username,
     :facebook_username,
     :phone_number,
+    :artworks,
     :created_at,
     :updated_at,
   ].freeze
@@ -77,6 +79,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     :twitter_username,
     :facebook_username,
     :phone_number
+    :artworks
   ].freeze
 
   # Overwrite this method to customize how artists are displayed

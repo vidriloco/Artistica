@@ -9,7 +9,7 @@ class CategoryDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     tags: Field::HasMany,
-    pictures: Field::HasMany,
+    artworks: Field::HasMany,
     articles: Field::HasMany,
     id: Field::Number,
     title: Field::String,
@@ -36,7 +36,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     :description,
     :created_at,
     :updated_at,
-    :pictures,
+    :artworks,
     :articles,
   ].freeze
 

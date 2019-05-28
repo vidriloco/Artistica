@@ -1,5 +1,5 @@
 <%= render 'shared/header_opaque' %>
-<%= render partial: 'shared/metatags', locals: { seo: @spot_picture } %>
+<%= render partial: 'shared/metatags', locals: { seo: @artwork } %>
 
 <!-- Content -->
 <div class="content clearfix">
@@ -12,21 +12,21 @@
 					<div class="post-media center">
 						<div class="thumbnail gallery" itemscope itemtype="http://schema.org/ImageGallery">
 							<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="<%= @spot_picture.url %>" itemprop="contentUrl" data-size="auto">
-									<%= image_tag(@spot_picture.url, itemprop: "thumbnail") %>
+								<a href="<%= @artwork.url %>" itemprop="contentUrl" data-size="auto">
+									<%= image_tag(@artwork.url, itemprop: "thumbnail") %>
 								</a>
 							</figure>
 						</div>
 					</div>
 					<div class="post-content center">
-						<h2 class="post-title"><%= @spot_picture.title %></h2>
-						<%= render partial: 'shared/ownership_details', locals: { resource_name: "Publicada", resource: @spot_picture } %>
+						<h2 class="post-title"><%= @artwork.title %></h2>
+						<%= render partial: 'shared/ownership_details', locals: { resource_name: "Publicada", resource: @artwork } %>
 					</div>
 					<br/>
 					<div class="post-content center">
 						<div class="row">
 							<div class="column width-10 offset-1">
-								<p><%= @spot_picture.description.html_safe %></p>
+								<p><%= @artwork.description.html_safe %></p>
 							</div>
 						</div>
 					</div>
@@ -34,23 +34,11 @@
 			</div>
 			<div class="column width-3">
 				<div class="accordion style-2" data-toggle-icon="" data-toggle-multiple="">
-					<ul>
-						<li class="active">
-							<a href="#accordion-map"><span class="icon-minus"></span>Ver Mapa</a>
-							<div id="accordion-map" class="" style="height: 0px;">
-								<div class="accordion-content">
-									<div class="map-container" data-coordinates="[<%= @spot_picture.location %>]" data-icon='"<%= asset_url('map-marker.png')%>"' data-zoom-level="15" data-style="color">
-										<div class="map-canvas" id="map-canvas-1"></div>
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
 					<div class="post-info boxed">
 						<div class="row">
 							<div class="column width-12">
 								<div class="actions">
-									<b>TAGS: </b><%= tags_for(@spot_picture) %>
+									<b>TAGS: </b><%= tags_for(@artwork) %>
 								</div>
 							</div>
 						</div>
@@ -58,7 +46,7 @@
 						<div class="row">
 							<div class="column width-12">
 								<div class="actions center">
-									<p>Compartir en</p><%= render partial: 'shared/share_buttons', locals: { sharable_object: @spot_picture } %>
+									<p>Compartir en</p><%= render partial: 'shared/share_buttons', locals: { sharable_object: @artwork } %>
 								</div>
 							</div>
 						</div>
@@ -82,18 +70,13 @@
 				<%= render 'ads/bottom_ad' %>
 				
 				<div class="fb-comments"
-			   data-href="<%= seo_for_url(@spot_picture) %>"
+			   data-href="<%= seo_for_url(@artwork) %>"
 			   data-width="100%"></div>
 	 		 	</div>
 			</div>
 		</div>
  	</div>
 	<hr class="post-finished-indicator" />
-	<!-- About Intro End -->
-	<%= render partial: 'related_pictures', 
-						  locals: { title: "Este lugar en otros tiempos", pictures: [] } %>
-	<%= render partial: 'related_pictures', 
-							locals: { title: "Lugares cercanos", pictures: [] } %>
 	
 </div>
 

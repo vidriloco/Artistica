@@ -10,12 +10,7 @@ class ApplicationController < ActionController::Base
     @slides = Slide.enabled_for(:landing)
     @article = Article.last
     @categories = PromotedCategory.on_landing_page
-    @pictures = Picture.all_pictures_with(@categories)
-    @recent_pictures = Picture.order('created_at DESC').limit(8)
-    @selected_pictures = [
-      'https://images.unsplash.com/photo-1517516794485-082c4d03bb19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80', 
-      'https://images.unsplash.com/photo-1527620774867-0f15643667cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80',
-      'https://images.unsplash.com/photo-1548020887-619fb11eb302?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-    ]
+    @artworks = Artwork.all_for(@categories)
+    @recent_artworks = Artwork.order('created_at DESC').limit(8)
   end
 end

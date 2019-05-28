@@ -24,11 +24,12 @@ es-MX:
       category:
         title: Título
         description: Descripción
-      picture:
+      artwork:
+        image: Foto
         tags: Categorías
         user: Usuario
-        width: Ancho
-        height: Alto
+        width: Ancho (en cms)
+        height: Largo (en cms)
         published: ¿Está publicada?
         disposition_on_landing_page: Tipo de fotografía
         title: Título

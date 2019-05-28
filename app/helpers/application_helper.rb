@@ -26,7 +26,7 @@ module ApplicationHelper
   end
   
   def seo_for_description(object)
-    if object.is_a?(SeoForPage) || object.is_a?(Picture)
+    if object.is_a?(SeoForPage) || object.is_a?(Artwork)
       object.description
     else
       object.content

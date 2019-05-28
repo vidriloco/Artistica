@@ -4,14 +4,14 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :admin do
     resources :artists
-    resources :pictures
     resources :categories
     resources :articles
     resources :users
     resources :promoted_categories
     resources :seo_for_pages
     resources :slides
-    root to: "pictures#index"
+    resources :artworks
+    root to: "artworks#index"
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -19,10 +19,10 @@ Rails.application.routes.draw do
   
   get '/artistas/:slug', to: 'artists#show', as: 'artista'
   get '/nuestra-coleccion', to: redirect('coleccion')
-  get '/fotografias', to: redirect('/coleccion')
-  get '/fotografias/:id(/:name)', to: 'pictures#show', as: 'picture'
+  get '/obras', to: redirect('/coleccion')
+  get '/obras/:id(/:name)', to: 'artworks#show', as: 'artwork'
   get '/tags/:slug', to: 'tags#show', as: 'tag'
-  get '/coleccion', to: 'pictures#index', as: 'pictures'
+  get '/coleccion', to: 'artworks#index', as: 'artworks'
   get '/articulos-y-rutas', to: 'articles#index', as: 'articles'
   get '/articulos-y-rutas/:id(/:name)', to: 'articles#show', as: 'article'  
 end

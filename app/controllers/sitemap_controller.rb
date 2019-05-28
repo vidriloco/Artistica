@@ -1,8 +1,8 @@
 class SitemapController < ApplicationController
   
   def index
-    @endpoints = ['coleccion', 'fotografias', 'nuestra-coleccion', 'articulos-y-rutas']
-    @pictures = Picture.published
+    @endpoints = ['coleccion', 'obras', 'nuestra-coleccion', 'articulos-y-rutas']
+    @artworks = Artwork.published
     @articles = Article.published
     @tags = Tag.all
     

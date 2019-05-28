@@ -12,20 +12,20 @@
 		</div>
 		<div class="column width-12">
 			<div class="row">
-				<% works.each_slice(2) do |work_pair| %>
+				<% artworks.each_slice(2) do |artwork_pair| %>
 					
-					<% work_pair.each do |work| %>
+					<% artwork_pair.each do |artwork| %>
 						<div class="column width-6">
 							<div class="row">
 								<div class="thumbnail img-scale-in recent-picture" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#000000" data-hover-bkg-opacity="0.3">
-									<a href="<%= work_path(work.id, work.title.parameterize) %>">
-										<div style="width: 100%; height: 500px; background-image: url('<%= work.url %>'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;"></div>
+									<a href="<%= artwork_path(artwork.id, artwork.title.parameterize) %>">
+										<div style="width: 100%; height: 500px; background-image: url('<%= artwork.url %>'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;"></div>
 										<span class="overlay-info">
 											<span>
 												<span>
 													<span class="left inline">
-														<span class="project-title"><%= work.title %></span>
-														<span class="project-description"><%= seo_for_keywords(work) %></span>
+														<span class="project-title"><%= artwork.title %></span>
+														<span class="project-description"><%= seo_for_keywords(artwork) %></span>
 													</span>
 												</span>
 											</span>
@@ -44,7 +44,7 @@
 <div class="section-block no-margin no-padding mt-70">
 	<div class="row flex">
 		<div class="column width-8 push-2 center">
-			<a class="button medium bkg-theme bkg-hover-charcoal color-white color-hover-white text-uppercase" href="<%= work_path %>">Ver todas las obras</a>
+			<a class="button medium bkg-theme bkg-hover-charcoal color-white color-hover-white text-uppercase" href="<%= artworks_path %>">Ver todas las obras</a>
 		</div>
 	</div>
 </div>

@@ -14,9 +14,10 @@
   </section>
 
 	<!-- Recent pictures -->
-	<%= render 'recent-pictures' %>
-	
-	
+  <% unless @recent_artworks.empty? %>
+	  <%= render partial: 'application/sections/recent-artwork', locals: { artworks: @recent_artworks } %>
+	<% end %>
+  
 	<div class="section-block replicable-content no-padding-top mt-40">
 		<hr>
 		<div class="row flex mt-60">
@@ -31,29 +32,11 @@
 		<%= render partial: 'articles/article', locals: { article: @article, title: "Obra destacada de la semana" } %>
 	</div>
 	
-	<!-- Stand out topics -->
-	<div class="section-block grid-filter-menu right left-on-mobile mt-70">
-		<div class="row no-padding">
-			<div class="column width-6 left">
-				<h3 class="mb-mobile-50">Obras según su técnica</h3>
-			</div>
-			<div class="column width-6">
-				<ul>
-					<li><a class="active" href="#" data-filter="*">Todo</a></li>
-					<% @categories.each do |projected_category| %>
-						<li>
-							<a href="#" data-filter=".<%= projected_category.category.title.parameterize %>">
-								<%= projected_category.category.title %>
-							</a>
-						</li>
-					<% end %>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<%= render partial: 'pictures/list', locals: { pictures: @pictures } %>
-	
-
+  <!-- Displays the work of the artists grouped by category -->
+  <% unless @artworks.empty? %>
+    <%= render partial: 'application/sections/artwork-by-category', locals: { categories: @categories, artworks: @artworks } %>
+  <% end %>
+  
 	<!-- Displaying our achievements -->
 	<%= render 'difusion' %>
 

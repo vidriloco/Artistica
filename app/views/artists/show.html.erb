@@ -41,37 +41,44 @@
 	</section>
 	<!-- Fullscreen Slider Section End -->
 
-	<!-- Hero Section 5 -->
-	<section id="about" class="section-block hero-5 hero-5-1 window-height right show-media-column-on-mobile bkg-white color-charcoal">
-		<div class="media-column width-6"></div>
+	<!-- Hero Section 5 End -->
+  <section id="about" class="section-block hero-5 hero-5-1 window-height right show-media-column-on-mobile bkg-white color-charcoal">
+		<div class="media-column width-5" style="background-image: url(<%= @artworks.first.image_url %>)"></div>
 		<div class="row">
-			<div class="column width-5">
-				<div class="hero-content split-hero-content">
-					<div class="hero-content-inner left horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;" data-threshold="0.5">
+			<div class="column width-6">
+				<div class="hero-content split-hero-content tmh-perspective">
+					<div class="hero-content-inner right horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;" data-threshold="0.5">
 						<h2 class="mb-30"><%= @artist.name %></h2>
-						<p class="lead"><%= @artist.bio %></p>
+						<div class="lead"><%= @artist.bio.html_safe %></div>
+            
+  					<h4><span class="title-tiny text-uppercase weight-bold color-white mb-10">Obra principal</span><br/>
+              <p class="title-tiny color-white mb-10"><%= @artworks.first.title %>, <%= @artworks.first.year %></p>
+            </h4>
+            
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Hero Section 5 End -->
+          
 
 	<!-- Content Section -->
 	<div class="section-block replicable-content bkg-charcoal color-white">
 		<div class="row">
 			<div class="column width-12 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;" data-threshold="0.5">
-				<h2 class="mb-30">02. Work</h2>
+				<h2 class="mb-30">Trayectoria</h2>
 			</div>
 			<div class="column width-5 offset-3 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;delay:200ms;" data-threshold="0.5">
-				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+				<p class="lead"><%= @artist.artwork_details %></p>
 			</div>
 			<div class="column width-4 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;delay:400ms;" data-threshold="0.5">
 				<div class="stats-1 left">
 					<div class="stat box large bkg-black">
 						<div class="stat-inner">
-							<p class="counter"><span class="stat-counter" data-count-from="1230" data-count-to="1556">1,230</span> Projects</p>
-							<p class="description">Since Our Inception in January 2013</p>
+							<p class="counter">
+                <span class="stat-counter" data-count-from="<%= @artist.artwork_count*0.5.to_int %>" data-count-to="<%= @artist.artwork_count %>"><%= @artist.artwork_count %></span> Obras
+              </p>
+							<p class="description"><%= @artist.artwork_details_since %></p>
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class PictureDashboard < Administrate::BaseDashboard
+class ArtworkDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,7 +10,7 @@ class PictureDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     tags: Field::HasMany,
     categories: Field::HasMany,
-    user: Field::BelongsTo,
+    artists: Field::HasMany,
     disposition_on_landing_page: Field::Select.with_options(collection: ['portraits', 'wide', 'grid-sizer portrait']),
     id: Field::Number,
     title: Field::String,
@@ -41,7 +41,6 @@ class PictureDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :title,
     :list_of_tags,
-    :user,
     :id,
     :year,
     :published,
@@ -49,6 +48,7 @@ class PictureDashboard < Administrate::BaseDashboard
     :height,
     :description,
     :image,
+    :artists,
     :created_at,
     :updated_at,
   ].freeze
@@ -65,14 +65,14 @@ class PictureDashboard < Administrate::BaseDashboard
     :image,
     :year,
     :categories,
-    :user,
     :published,
+    :artists
   ].freeze
 
   # Overwrite this method to customize how pictures are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(picture)
-    picture.title
+  def display_resource(artwork)
+    artwork.title
   end
 end

@@ -1,9 +1,8 @@
-class CreatePictures < ActiveRecord::Migration[5.0]
+class CreateArtworks < ActiveRecord::Migration[5.0]
   def change
-    create_table :pictures do |t|
+    create_table :artworks do |t|
       t.string        :title
       t.text          :description
-      t.integer       :user_id
       t.integer       :year      
       
       t.string        :credits
@@ -11,8 +10,11 @@ class CreatePictures < ActiveRecord::Migration[5.0]
       t.float         :height
       
       t.string        :disposition_on_landing_page
-      t.string        :published
+      t.boolean       :published
       t.text          :list_of_tags
+      
+      t.attachment    :image
+      
       t.timestamps
     end
   end

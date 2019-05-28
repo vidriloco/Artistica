@@ -2,6 +2,8 @@ class Artist < ApplicationRecord
   include Taggable
   include Imageable
   
+  has_many :artworks, through: :artist_artworks
+  
   validates :name, :slug, :quote, :birth_place, :email, presence: true
   validates :slug, uniqueness: true
   validates :email, uniqueness: true

@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   has_many :tags, dependent: :destroy
-  has_many :pictures, through: :tags, source: :taggable, source_type: "Picture"
+  has_many :artworks, through: :tags, source: :taggable, source_type: "Artwork"
   has_many :articles, through: :tags, source: :taggable, source_type: "Article"
   has_many :artists, through: :tags, source: :taggable, source_type: "Artist"
   

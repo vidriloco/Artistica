@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   def show
-    @category = Category.where(slug: params[:slug]).joins(:pictures).first
-    @pictures = @category.pictures
+    @category = Category.where(slug: params[:slug]).joins(:artworks).first
+    @artworks = @category.artworks
   end
 end

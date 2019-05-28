@@ -1,5 +1,5 @@
 class PictureInSection < ApplicationRecord
-  belongs_to :picture
+  belongs_to :artwork
   
   before_save :adapt_sections
 end
