@@ -1,10 +1,8 @@
 module Imageable
   def self.included(base)
     base.class_eval do
-      validates :image, attachment_presence: true
-  
-      has_attached_file :image, default_url: "/images/:style/missing.png"
-      validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+      validates :image, presence: true
+      has_one_attached :image
     end
   end
   
@@ -13,12 +11,6 @@ module Imageable
   end
   
   def image_url
-    return "" if image.blank?
-    
-    if image.url[0,2] == "//"
-      "http:#{image.url}"
-    else
-      image.url
-    end
+    image
   end
 end

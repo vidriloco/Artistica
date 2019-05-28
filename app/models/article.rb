@@ -3,15 +3,11 @@ class Article < ApplicationRecord
   has_many :categories, through: :tags
   belongs_to :user
   
-  has_attached_file :image, default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  
   def self.published
     self.where(published: true)
   end
   
   def image_url
-    return image.url unless image.blank?
   end
   
   def has_owner?
