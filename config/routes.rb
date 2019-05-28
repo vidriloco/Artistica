@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   get '/tags/:slug', to: 'tags#show', as: 'tag'
   get '/coleccion', to: 'artworks#index', as: 'artworks'
   get '/articulos-y-rutas', to: 'articles#index', as: 'articles'
-  get '/articulos-y-rutas/:id(/:name)', to: 'articles#show', as: 'article'  
+  get '/articulos-y-rutas/:id(/:name)', to: 'articles#show', as: 'article'
 end
