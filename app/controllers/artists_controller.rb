@@ -6,6 +6,7 @@ class ArtistsController < ApplicationController
     
     redirect_to(root_path) && return if @artist.blank?
     
+    @categories = PromotedCategory.on_artworks
     @artworks = @artist.artworks.order('index ASC')
   end
 end

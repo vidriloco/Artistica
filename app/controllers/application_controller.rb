@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     @seo = SeoForPage.find_for_page('main-page')
     @slides = Slide.enabled_for(:landing)
     @article = Article.last
-    @categories = PromotedCategory.on_landing_page
+    @categories = PromotedCategory.on_artworks
     @artworks = Artwork.all_for(@categories)
     @recent_artworks = Artwork.order('created_at DESC').limit(8)
   end
