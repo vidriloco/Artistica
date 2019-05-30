@@ -1,0 +1,23 @@
+<!-- Content Section -->
+<div class="section-block replicable-content bkg-charcoal color-white">
+	<div class="row">
+		<div class="column width-12 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;" data-threshold="0.5">
+			<h2 class="mb-30">Trayectoria</h2>
+		</div>
+		<div class="column width-5 offset-3 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;delay:200ms;" data-threshold="0.5">
+			<p class="lead"><%= artist.artwork_trajectory %></p>
+		</div>
+		<div class="column width-4 horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;delay:400ms;" data-threshold="0.5">
+			<div class="stats-1 left">
+				<div class="stat box large bkg-black">
+					<div class="stat-inner">
+						<p class="counter"><%= artist.artwork_count %> creaciones
+            </p>
+						<p class="description">Artista desde <%= artist.artwork_trajectory_since %></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Content Section End -->
