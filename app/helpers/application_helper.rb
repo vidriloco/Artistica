@@ -42,6 +42,6 @@ module ApplicationHelper
   end
   
   def seo_for_image_url(object)
-    object.image_url unless object.nil?
+    object.image unless object.nil?
   end
 end

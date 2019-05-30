@@ -1,7 +1,7 @@
 <div class="grid-item <%= artwork.disposition_on_landing_page %> <%= artwork.parameterized_category_list %>">
 	<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#000000" data-hover-bkg-opacity="0.4">
 		<a href="<%= artwork_path(artwork.id, artwork.title.parameterize) %>">
-			<%= image_tag(artwork.url) %>
+			<%= image_tag(artwork.image) %>
 			<span class="overlay-info v-align-bottom left">
 				<span>
 					<span>

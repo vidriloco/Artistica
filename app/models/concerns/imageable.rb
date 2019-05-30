@@ -5,12 +5,5 @@ module Imageable
       has_one_attached :image
     end
   end
-  
-  def url
-    image_url
-  end
-  
-  def image_url
-    image
-  end
+
 end

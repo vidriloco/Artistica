@@ -19,7 +19,7 @@ class ArtworkDashboard < Administrate::BaseDashboard
     published: Field::Boolean,
     width: Field::Number,
     height: Field::Number,
-    image: PaperclipField,
+    image: AttachedField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     list_of_tags: Field::String
@@ -33,7 +33,8 @@ class ArtworkDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :list_of_tags
+    :list_of_tags,
+    :image
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

@@ -23,7 +23,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     phone_number: Field::String,
     email: Field::String,
     shows_contact_information: Field::Boolean,
-    image: PaperclipField,
+    image: AttachedField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

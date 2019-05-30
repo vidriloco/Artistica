@@ -16,7 +16,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     content: EnrichedTextField,
     published: Field::Boolean,
     excerpt: EnrichedTextField,
-    image: PaperclipField,
+    image: AttachedField,
     reference_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
