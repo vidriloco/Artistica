@@ -1,4 +1,80 @@
 es-MX:
+  helpers:
+    label: &administrate_models
+      artist:
+        slug: Slug
+        name: Nombre
+        bio: Biografía
+        birth_date: Fecha de nacimiento
+        email: Correo electrónico
+        categories: Categoría
+        birth_place: Lugar de nacimiento
+        twitter_username: Twitter
+        facebook_username: Facebook
+        phone_number: Número de teléfono
+        quote: Pensamiento
+        shows_contact_information: Muestra detalles de contacto
+      user:
+        created_at: Registrado el
+        updated_at: Actualizado el
+        name: Nombre
+        email: Correo electrónico
+        username: Nombre de usuario
+      category:
+        title: Título
+        description: Descripción
+      artwork:
+        image: Foto
+        tags: Categorías
+        user: Usuario
+        width: Ancho (en cms)
+        height: Largo (en cms)
+        published: ¿Está publicada?
+        disposition_on_landing_page: Tipo de fotografía
+        title: Título
+        year: Año
+        description: Descripción
+        categories: Categorias
+      slide:
+        style: Estilo
+        first_heading: Primer encabezado
+        second_heading: Segundo encabezado
+        third_heading: Tercer encabezado
+        is_enabled: ¿Está visible?
+        group: Grupo
+        url: URL
+        index: Posición
+        image_url: URL de imagen de fondo
+        group_localized: Grupo
+        style_localized: Estilo
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+  administrate:
+    actions:
+      confirm: ¿Estás seguro?
+      destroy: Destruir
+      edit: Editar
+      edit_resource: Editar %{name}
+      show_resource: Mostrar %{name}
+      new_resource: Nuevo %{name}
+      back: Volver
+    controller:
+      create:
+        success: "%{resource} fue creado exitosamente."
+      destroy:
+        success: "%{resource} fue destruido exitosamente."
+      update:
+        success: "%{resource} fue actualizado exitosamente."
+    fields:
+      has_many:
+        more: Mostrando %{count} de %{total_count}
+        none: Ninguno
+    form:
+      error: error
+      errors: "%{pluralized_errors} prohibited this %{resource_name} from being saved:"
+    search:
+      clear: Borrar búsqueda
+      label: Buscar %{resource}
   social_share_button:
     share_to: "Compartir"
     twitter: "Tweetear"
@@ -16,12 +92,8 @@ es-MX:
           two_lines_center_aligned: "Dos lineas centradas"
           two_lines_left_aligned: "Dos lineas alineadas a la izquierda"
     models:
-      user:
-        one: Usuario
-        other: Usuarios
-      category:
-        one: Categoria
-        other: Categorias
+      attributes:
+        <<: *administrate_models
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
