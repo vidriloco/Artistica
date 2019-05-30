@@ -4,6 +4,7 @@ class Artist < ApplicationRecord
   
   has_many :artist_artworks
   has_many :artworks, through: :artist_artworks
+  has_many :achievements
   
   validates :name, :slug, :quote, :birth_place, :email, presence: true
   validates :slug, uniqueness: true

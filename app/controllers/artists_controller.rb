@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   layout 'artists'
   
   def show
-    @artist = Artist.where(slug: params[:slug]).first
+    @artist = Artist.where(slug: params[:slug]).includes([:artworks, :achievements]).first
     
     redirect_to(root_path) && return if @artist.blank?
     

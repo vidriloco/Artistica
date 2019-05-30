@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :seo_for_pages
     resources :slides
     resources :artworks
+    resources :achievements
     root to: "artworks#index"
   end
 

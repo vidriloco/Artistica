@@ -65,7 +65,7 @@
 
   <%= render partial: 'artists/sections/artworks', locals: { artworks: @artworks, categories: @categories } %>
 
-	<%= render partial: 'artists/sections/achievements' %>
+	<%= render partial: 'artists/sections/achievements', locals: { achievements: @artist.achievements } %>
 	<!-- Testimonial Section 5 End -->
   <%= render partial: 'artists/sections/contact', locals: { artist: @artist } %>
   
