@@ -23,6 +23,9 @@ class ArtistDashboard < Administrate::BaseDashboard
     phone_number: Field::String,
     email: Field::String,
     shows_contact_information: Field::Boolean,
+    artwork_count: Field::Number,
+    artwork_trajectory_since: Field::String,
+    artwork_trajectory: Field::String,
     image: AttachedField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -79,7 +82,10 @@ class ArtistDashboard < Administrate::BaseDashboard
     :twitter_username,
     :facebook_username,
     :phone_number,
-    :artworks
+    :artworks,
+    :artwork_trajectory,
+    :artwork_trajectory_since,
+    :artwork_count
   ].freeze
 
   # Overwrite this method to customize how artists are displayed
