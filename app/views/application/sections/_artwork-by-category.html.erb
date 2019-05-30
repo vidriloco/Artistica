@@ -5,16 +5,7 @@
 			<h3 class="mb-mobile-50">Obras según su técnica</h3>
 		</div>
 		<div class="column width-6">
-			<ul>
-				<li><a class="active" href="#" data-filter="*">Todo</a></li>
-				<% categories.each do |projected_category| %>
-					<li>
-						<a href="#" data-filter=".<%= projected_category.category.title.parameterize %>">
-							<%= projected_category.category.title %>
-						</a>
-					</li>
-				<% end %>
-			</ul>
+			<%= render partial: 'shared/categories_list', locals: { categories: categories } %>
 		</div>
 	</div>
 </div>
