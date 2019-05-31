@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
     @slides = Slide.enabled_for(:landing)
     @article = Article.last
     @categories = PromotedCategory.on_artworks
-    @artworks = Artwork.all_for(@categories)
-    @recent_artworks = Artwork.order('created_at DESC').limit(8)
+    @artworks = Artwork.all_for(@categories).limit(10)
   end
 end

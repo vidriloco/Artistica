@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'application#index'
   
-  get '/artistas/:slug', to: 'artists#show', as: 'artista'
+  get '/artistas/:slug', to: 'artists#show', as: 'artist'
   get '/nuestra-coleccion', to: redirect('coleccion')
   get '/obras', to: redirect('/coleccion')
   get '/obras/:id(/:name)', to: 'artworks#show', as: 'artwork'

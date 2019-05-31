@@ -1,0 +1,44 @@
+<div class="section-block replicable-content padding-bottom no-padding-top">
+	<div class="row flex">
+		<div class="column width-8 push-2 center">
+			<p class="lead">No importa el tipo de creación que estés buscando, tenemos la certeza de que en <b>Artística</b> siempre encontrarás algo nuevo que te sorprenda.</p>
+		</div>
+	</div>
+</div>
+
+<div class="section-block grid-filter-menu right left-on-mobile no-margins no-padding">
+  <hr>
+	<div class="row no-padding">
+		<div class="column width-12 center">
+			<h3 class="mb-mobile-50">Obras destacadas</h3>
+		</div>
+	</div>
+  <br/>
+</div>
+
+<div class="section-block clearfix no-padding-top">
+	<div class="row">
+
+		<!-- Content Inner -->
+		<div class="column width-12 content-inner blog-regular center">
+      <% artworks.each do |artwork| %>
+			<article class="post">
+				<div class="post-media">
+					<div class="thumbnail">
+						<a class="overlay-link" href="<%= url_for(artwork.image) %>">
+              <%= image_tag(artwork.image) %>
+						</a>
+					</div>
+				</div>
+				<div class="post-content">
+					<h2 class="post-title"><a href="blog-single-post-sidebar-right.html"><%= artwork.title %></a></h2>
+					<div class="post-info">
+						<span class="post-date"><%= distance_of_time_in_words_to_now(artwork.created_at) %></span>/
+            <span class="post-autor">Por <%= link_to artwork.artists.first.name, artist_path(artwork.artists.first.slug) %></span>
+					</div>
+				</div>
+			</article>
+      <% end %>
+    </div>
+  </div>
+</div>

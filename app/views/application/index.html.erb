@@ -4,38 +4,14 @@
 <!-- Content -->
 <div class="content clearfix">
 
-  <!-- Fullscreen Slider Section -->
-  <section class="section-block featured-media window-height tm-slider-parallax-container">
-  	<div class="tm-slider-container full-width-slider" data-featured-slider data-parallax data-parallax-fade-out data-animation="scaleOut" data-speed="1200" data-scale-under="960">
-  		<ul class="tms-slides">
-	      <%= render @slides %>
-  		</ul>
-  	</div>
-  </section>
+  <%= render partial: 'application/sections/slides', locals: { slides: @slides } %>
 
-	<!-- Recent pictures -->
-  <% unless @recent_artworks.empty? %>
-	  <%= render partial: 'application/sections/recent-artwork', locals: { artworks: @recent_artworks } %>
-	<% end %>
-  
-	<div class="section-block replicable-content no-padding-top mt-40">
-		<hr>
-		<div class="row flex mt-60">
-			<div class="column width-8 push-2 center">
-				<p class="lead">No importa el tipo de creación que estés buscando, tenemos la certeza de que en <b>Artística</b> siempre encontrarás algo nuevo que te sorprenda.</p>
-			</div>
-		</div>
-	</div>
+  <% unless @artworks.empty? %>
+    <%= render partial: 'application/sections/recent-artwork', locals: { categories: @categories, artworks: @artworks } %>
+  <% end %>
 	
 	<!-- Displaying the article of the month -->
-	<div class="no-margins no-padding">
-		<%= render partial: 'articles/article', locals: { article: @article, title: "Obra destacada de la semana" } %>
-	</div>
-	
-  <!-- Displays the work of the artists grouped by category -->
-  <% unless @artworks.empty? %>
-    <%= render partial: 'application/sections/artwork-by-category', locals: { categories: @categories, artworks: @artworks } %>
-  <% end %>
+  <%= render partial: 'application/sections/best-picks', locals: { artworks: @artworks } %>
   
 	<!-- Displaying our achievements -->
 	<%= render 'difusion' %>
