@@ -9,7 +9,7 @@
 <div class="section-block grid-filter-menu right left-on-mobile no-margins no-padding">
   <hr>
 	<div class="row no-padding">
-		<div class="column width-12 center">
+		<div class="column width-12 left">
 			<h3 class="mb-mobile-50">Obras destacadas</h3>
 		</div>
 	</div>
@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="post-content">
-					<h2 class="post-title"><a href="blog-single-post-sidebar-right.html"><%= artwork.title %></a></h2>
+					<h2 class="post-title"><%= link_to artwork.title, artwork_path(artwork) %></h2>
 					<div class="post-info">
 						<span class="post-date"><%= distance_of_time_in_words_to_now(artwork.created_at) %></span>/
             <span class="post-autor">Por <%= link_to artwork.artists.first.name, artist_path(artwork.artists.first.slug) %></span>

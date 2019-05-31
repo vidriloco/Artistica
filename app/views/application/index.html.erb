@@ -3,22 +3,17 @@
 
 <!-- Content -->
 <div class="content clearfix">
-
-  <%= render partial: 'application/sections/slides', locals: { slides: @slides } %>
-
+  <% unless @slides.empty? %>
+    <%= render partial: 'application/sections/slides', locals: { slides: @slides } %>
+  <% end %>
+  
   <% unless @artworks.empty? %>
     <%= render partial: 'application/sections/recent-artwork', locals: { categories: @categories, artworks: @artworks } %>
   <% end %>
 	
-	<!-- Displaying the article of the month -->
   <%= render partial: 'application/sections/best-picks', locals: { artworks: @artworks } %>
-  
-	<!-- Displaying our achievements -->
-	<%= render 'difusion' %>
-
-	<!-- Displaying info about ourselves -->
-	<%= render 'about' %>
-
+	<% render 'application/sections/difusion' %>
+	<%= render 'application/sections/about' %>
 </div>
 <!-- Content End -->
 
