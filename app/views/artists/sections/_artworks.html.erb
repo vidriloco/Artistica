@@ -13,22 +13,7 @@
 	<div class="row">
 		<div class="column width-12">
 			<div class="row grid content-grid-4">
-        <% @artworks.each do |artwork| %>
-  				<div class="grid-item <%= artwork.parameterized_category_list %> <%= artwork.disposition_on_landing_page %>">
-  					<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="700" data-hover-bkg-color="#ffffff" data-hover-bkg-opacity="0.9">
-  						<a class="overlay-link" href="<%= artwork_path(artwork) %>">
-  							<%= image_tag artwork.image %>
-  							<span class="overlay-info">
-  								<span>
-  									<span>
-  										<span class="project-title"><%= artwork.title %></span>
-  									</span>
-  								</span>
-  							</span>
-  						</a>
-  					</div>
-  				</div>
-        <% end %>
+        <%= render @artworks %>
 			</div>
 		</div>
 	</div>
