@@ -11,5 +11,6 @@ class ApplicationController < ActionController::Base
     @article = Article.last
     @categories = PromotedCategory.on_artworks
     @artworks = Artwork.all_for(@categories).limit(10)
+    @artists = Artist.all.limit(3)
   end
 end

@@ -1,0 +1,12 @@
+<div class="section-block replicable-content team-2 bkg-grey-ultralight">
+	<div class="row">
+		<div class="column width-6">
+			<h3 class="mb-50">Tres artistas recomendados</h3>
+		</div>
+    <div class="column width-12">
+    	<div class="row content-grid-3">
+        <%= render partial: 'artists/profile', collection: artists, as: :artist %>
+      </div>
+    </div>
+  </div>
+</div>

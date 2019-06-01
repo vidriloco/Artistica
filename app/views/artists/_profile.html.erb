@@ -1,0 +1,11 @@
+<div class="grid-item horizon" data-animate-in="preset:slideInUpShort;duration:1000ms;" data-threshold="0.3">
+	<div class="thumbnail no-margin-bottom" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#ffffff" data-hover-bkg-opacity="0.9">
+		<img src="<%= url_for(artist.image) %>" width="760" height="500" alt=""/>
+	</div>
+	<div class="team-content-info">
+		<h4 class="mb-5"><%= artist.name %></h4>
+		<h4 class="occupation">Pintora</h4>
+		<p><%= artist.bio.html_safe %></p>
+    <b><%= link_to "Conoce su obra", artist_path(artist) %></b>
+	</div>
+</div>
