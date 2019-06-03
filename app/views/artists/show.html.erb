@@ -3,69 +3,15 @@
 <!-- Content -->
 <div class="content clearfix">
 
-	<!-- Fullscreen Slider Section -->
-	<section class="section-block featured-media window-height tm-slider-parallax-container">
-		<div class="tm-slider-container full-width-slider pagination-top" data-featured-slider data-parallax data-parallax-fade-out data-animation="slide" data-scale-under="960">
-			<ul class="tms-slides">
-				<li class="tms-slide" data-image data-as-bkg-image data-force-fit>
-					<div class="tms-content">
-						<div class="tms-content-inner left v-align-middle">
-							<div class="row">
-        				<div class="column width-7 pd-20 left center-on-mobile">
-        					<h3 class="tms-caption title-large text-uppercase weight-bold color-white mb-0"
-        						data-animate-in="preset:slideInDownShort;duration:900ms;delay:100ms;"
-        						data-no-scale><%= @artist.name %></h3>
-        					<div class="clear"></div>
-        					<h4 class="tms-caption title-small text-uppercase lspacing-medium weight-bold color-white mb-10"
-        						data-animate-in="preset:slideInDownShort;duration:900ms;delay:300ms;"
-        						data-no-scale><%= @artist.birth_place %></h4>
-        					<div class="clear"></div>
-        					<p class="tms-caption font-alt-1 title-small weight-light color-white hide-on-mobile mb-30"
-        						data-animate-in="preset:slideInDownShort;duration:900ms;delay:500ms;"
-        						data-no-scale><%= @artist.quote %></p>
-        					<div class="clear"></div>
-        					<div class="tms-caption"
-        						data-animate-in="preset:slideInDownShort;duration:900ms;delay:700ms;"
-        						data-no-scale
-        					>
-						
-        					</div>
-        				</div>
-							</div>
-						</div>
-					</div>
-					<img data-src="<%= url_for(@artist.image) %>" data-retina src="<%= url_for(@artist.image) %>" alt="<% @artist.name %>"/>
-				</li>
-			</ul>
-		</div>
-	</section>
-	<!-- Fullscreen Slider Section End -->
-
-	<!-- Hero Section 5 End -->
-  <section id="about" class="section-block hero-5 hero-5-1 window-height right show-media-column-on-mobile bkg-white color-charcoal">
-		<div class="media-column width-5" style="background-image: url(<%= url_for(@artworks.first.image) %>)"></div>
-		<div class="row">
-			<div class="column width-6">
-				<div class="hero-content split-hero-content tmh-perspective">
-					<div class="hero-content-inner right horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;" data-threshold="0.5">
-						<h2 class="mb-30"><%= @artist.name %></h2>
-						<div class="lead"><%= @artist.bio.html_safe %></div>
-            
-  					<h4><span class="title-tiny text-uppercase weight-bold color-white mb-10">Obra principal</span><br/>
-              <p class="title-tiny color-white mb-10"><%= @artworks.first.title %>, <%= @artworks.first.year %></p>
-            </h4>
-            
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <%= render partial: 'artists/sections/header', locals: { artist: @artist } %>
+  
+  <%= render partial: 'artists/sections/bio', locals: { artworks: @artworks, artist: @artist } %>
           
   <%= render partial: 'artists/sections/trajectory', locals: { artist: @artist } %>
 
   <%= render partial: 'artists/sections/artworks', locals: { artworks: @artworks, categories: @categories } %>
 
 	<%= render partial: 'artists/sections/achievements', locals: { achievements: @artist.achievements } %>
-	<!-- Testimonial Section 5 End -->
+
   <%= render partial: 'artists/sections/contact', locals: { artist: @artist } %>
-  
+</div>

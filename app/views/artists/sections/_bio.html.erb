@@ -1,0 +1,20 @@
+<!-- Begins bio section -->
+<section id="about" class="section-block hero-5 hero-5-1 window-height right show-media-column-on-mobile bkg-white color-charcoal">
+	<div class="media-column width-5" style="background-image: url(<%= url_for(artworks.first.image) %>)"></div>
+	<div class="row">
+		<div class="column width-6">
+			<div class="hero-content split-hero-content tmh-perspective">
+				<div class="hero-content-inner right horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;" data-threshold="0.5">
+					<h2 class="mb-30"><%= artist.name %></h2>
+					<div class="lead"><%= artist.bio.html_safe %></div>
+          
+					<h4><span class="title-tiny text-uppercase weight-bold color-white mb-10">Obra principal</span><br/>
+            <p class="title-tiny color-white mb-10"><%= artworks.first.title %>, <%= artworks.first.year %></p>
+          </h4>
+          
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Ends bio section -->

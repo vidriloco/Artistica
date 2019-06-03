@@ -1,18 +1,21 @@
-<!-- Testimonial Section 5 -->
-<div class="section-block testimonial-5 testimonials-5-about-1">
-	<div id="testimonial-slider-1" class="testimonial-slider tm-slider-container">
-		<ul class="tms-slides">	
-      <% achievements.each do |achievement| %>
-  			<li class="tms-slide" data-image>
-  				<div class="tms-content-scalable">
-  					<div class="row">
-  						<div class="column width-8 offset-2">
-							  <%= render achievement %>
-  						</div>
-  					</div>
-  				</div>
-  			</li>
-      <% end %>
-		</ul>
-	</div>
-</div>
+<% unless achievements.empty? %>
+  <!-- Achievements section begins -->
+  <div class="section-block testimonial-5 testimonials-5-about-1">
+  	<div id="testimonial-slider-1" class="testimonial-slider tm-slider-container">
+  		<ul class="tms-slides">	
+        <% achievements.each do |achievement| %>
+    			<li class="tms-slide" data-image>
+    				<div class="tms-content-scalable">
+    					<div class="row">
+    						<div class="column width-8 offset-2">
+  							  <%= render achievement %>
+    						</div>
+    					</div>
+    				</div>
+    			</li>
+        <% end %>
+  		</ul>
+  	</div>
+  </div>
+  <!-- Achievements section ends -->
+<% end %>
