@@ -2035,6 +2035,12 @@ body,
 h4.project-title{
 	font-size: 1.4rem;
 }
+
+.project-title{
+    font-weight: bold;
+    color: white;
+}
+
 .project-title .label{
 	font-size: 1rem;
 	text-transform: uppercase;
