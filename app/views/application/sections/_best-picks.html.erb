@@ -18,26 +18,9 @@
 
 <div class="section-block clearfix no-padding-top">
 	<div class="row">
-
-		<!-- Content Inner -->
 		<div class="column width-12 content-inner blog-regular center">
       <% artworks.each do |artwork| %>
-			<article class="post">
-				<div class="post-media">
-					<div class="thumbnail">
-						<a class="overlay-link" href="<%= url_for(artwork.image) %>">
-              <%= image_tag(artwork.image) %>
-						</a>
-					</div>
-				</div>
-				<div class="post-content">
-					<h2 class="post-title"><%= link_to artwork.title, artwork_path(artwork) %></h2>
-					<div class="post-info">
-						<span class="post-date"><%= distance_of_time_in_words_to_now(artwork.created_at) %></span>/
-            <span class="post-autor">Por <%= link_to artwork.artists.first.name, artist_path(artwork.artists.first.slug) %></span>
-					</div>
-				</div>
-			</article>
+        <%= render partial: 'artworks/blog_style_artwork', locals: { artwork: artwork } %>
       <% end %>
     </div>
   </div>
