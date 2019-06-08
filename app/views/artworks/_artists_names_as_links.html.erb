@@ -1,0 +1,6 @@
+<% artists.each_with_index do |artist, index| %>
+  <%= link_to artist.name, artist_path(artist.slug) %>
+  <% if artists.count > 1 && index != artists.count-1 %>
+  ,
+  <% end %>
+<% end %>

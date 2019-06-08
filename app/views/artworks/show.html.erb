@@ -3,12 +3,20 @@
 
 <!-- Content -->
 <div class="content clearfix">
-	<!-- About Intro -->
+	
 	<div class="section-block clearfix no-padding-bottom">
 		<div class="row">
-			
-			<div class="column width-9 content-inner blog-regular">
-				<article class="post no-margin-bottom">
+			<div class="column width-10 content-inner blog-regular">
+  			<div class="post-content center mb-20">
+  				<h1 class="post-title no-margins no-padding"><%= @artwork.title %></h1>
+          
+      		<div class="post-info">
+            <hr/>
+      			<span class="post-date">Publicada <%= distance_of_time_in_words_to_now(@artwork.created_at) %></span>/
+            <span class="post-autor">Por <%= render partial: 'artworks/artists_names_as_links', locals: { artists: @artwork.artists } %></span>
+      		</div>
+  			</div>
+				<article class="post no-padding no-margins">
 					<div class="post-media center">
 						<div class="thumbnail gallery" itemscope itemtype="http://schema.org/ImageGallery">
 							<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
@@ -18,66 +26,48 @@
 							</figure>
 						</div>
 					</div>
-					<div class="post-content center">
-						<h2 class="post-title"><%= @artwork.title %></h2>
-						<%= render partial: 'shared/ownership_details', locals: { resource_name: "Publicada", resource: @artwork } %>
-					</div>
-					<br/>
-					<div class="post-content center">
-						<div class="row">
-							<div class="column width-10 offset-1">
-								<p><%= @artwork.description.html_safe %></p>
-							</div>
-						</div>
-					</div>
 				</article>
-			</div>
-			<div class="column width-3">
-				<div class="accordion style-2" data-toggle-icon="" data-toggle-multiple="">
-					<div class="post-info boxed">
-						<div class="row">
-							<div class="column width-12">
-								<div class="actions">
-									<b>TAGS: </b><%= tags_for(@artwork) %>
-								</div>
-							</div>
-						</div>
-						<hr/>
-						<div class="row">
-							<div class="column width-12">
-								<div class="actions center">
-									<p>Compartir en</p><%= render partial: 'shared/share_buttons', locals: { sharable_object: @artwork } %>
-								</div>
-							</div>
-						</div>
-						<hr/>
-						<div class="row">
-							<div class="column width-12">
-								<div class="actions center">
-									<%= link_to "<span class='icon-left-open-mini'></span> Atrás".html_safe, :back %>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<%= render 'ads/responsive_ad' %>
-			</div>
-		</div>
+  			<div class="post no-padding no-margins">
+  				<p class="text-xlarge center"><%= @artwork.escaped_details.blank? ? "No hay detalles sobre esta obra" : @artwork.escaped_details %></p>
+  			</div>
+  			<div class="post-content center mb-20">
+          <p class="text-large no-margins no-padding"><b>Dimensiones: </b><%= @artwork.width %> x <%= @artwork.height %> metros</p>
+          <p class="text-large no-margins no-padding"><b>Año: </b><%= @artwork.year %></p>
+        </div>
+      </div>
+      
+			<div class="column width-2 content-inner blog-regular">
+				<h4 class="no-margins no-padding center"><%= link_to "← Atrás", :back %></h4>
+        <hr/>
+        <div class="center">
+  				<p class="text-large mb-10">Compartir</p>
+          <%= render partial: 'shared/share_buttons', locals: { sharable_object: @artwork } %>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    
 	</div>
-	<div class="section-block clearfix no-padding-bottom">
-		<div class="column width-10 push-1 content-inner blog-regular">
-			<div class="row">
-				<%= render 'ads/bottom_ad' %>
-				
-				<div class="fb-comments"
-			   data-href="<%= seo_for_url(@artwork) %>"
-			   data-width="100%"></div>
-	 		 	</div>
-			</div>
-		</div>
- 	</div>
-	<hr class="post-finished-indicator" />
-	
+  
+  <% @artist_artworks.each do |artist, artist_artworks| %>
+    <div class="section-block grid-container small-margins no-padding mb-40" data-layout-mode="masonry" data-grid-ratio="1.5" data-animate-filter-duration="700" data-set-dimensions data-animate-resize data-animate-resize-duration="0">
+    	<div class="row no-padding">
+    		<div class="column width-12 center mb-30 mt-30">
+    			<h3 class="mb-mobile-50">Más obras de <b><%= artist.name %></b></h3>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="column width-12">
+    			<div class="row grid content-grid-3">
+            <% artist_artworks.map(&:artwork).each do |artwork| %>
+              <%= render partial: 'artworks/artwork', locals: { artwork: artwork, disable_support_for_picture_sizes: true } %>
+            <% end %>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+  <% end %>
+  
 </div>
 
 

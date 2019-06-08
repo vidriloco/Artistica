@@ -15,4 +15,8 @@ class Artwork < ApplicationRecord
     Artwork.order('artworks.created_at DESC')
     .joins(:categories).select('title', 'year', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id), published: true)
   end
+  
+  def escaped_details
+    description.eql?("<p></p>") ? nil : description.html_safe
+  end
 end

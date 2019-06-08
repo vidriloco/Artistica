@@ -2,15 +2,13 @@
 	<div class="section-block pt-110 pb-50 no-padding-top">
 		<div class="row">
 			<div class="column width-12 content-inner blog-regular">
-				<% unless title.blank? %>
-					<h3 class="title mt-30 center"><%= title %></h3>
-				<% end %>
+
 				<% artworks.each_slice(2) do |pair| %>
 					<div class="row content-grid-2">
 						<% pair.each do |artwork| %>
 							<div class="grid-item">
 								<div class="thumbnail no-margin-bottom" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#ffffff" data-hover-bkg-opacity="0.9">
-									<a href="<%= picture_path(artwork.id, artwork.title.parameterize) %>">
+									<a href="<%= artwork_path(artwork.id, artwork.title.parameterize) %>">
 										<img src="<%= artwork.url %>" alt="" style="transition-duration: 500ms;" height="500" width="760">
 									</a>
 								</div>
