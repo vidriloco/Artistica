@@ -6,6 +6,6 @@
 		<h4 class="mb-5"><%= artist.name %></h4>
 		<h4 class="occupation">Pintora</h4>
 		<p><%= artist.bio.html_safe %></p>
-    <b><%= link_to "Conoce su obra", artist_path(artist) %></b>
+    <b><%= link_to "Conoce su obra", artist_path(artist.slug) %></b>
 	</div>
 </div>

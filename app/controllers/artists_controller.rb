@@ -9,4 +9,8 @@ class ArtistsController < ApplicationController
     @categories = PromotedCategory.on_artworks
     @artworks = @artist.artworks.order('index ASC')
   end
+  
+  def index
+    @artists = Artist.all.order('created_at DESC')
+  end
 end
