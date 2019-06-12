@@ -2,5 +2,6 @@
  *= require sartre/core.min
  *= require sartre/skin-artists
  *= require social-share-button
+ *= require common
  *= require_self
  */

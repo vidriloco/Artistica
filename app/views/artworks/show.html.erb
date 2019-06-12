@@ -6,7 +6,7 @@
 	
 	<div class="section-block clearfix no-padding-bottom">
 		<div class="row">
-			<div class="column width-10 content-inner blog-regular">
+			<div class="column width-12 content-inner blog-regular">
   			<div class="post-content center mb-20">
   				<h1 class="post-title no-margins no-padding"><%= @artwork.title %></h1>
           
@@ -35,18 +35,27 @@
           <p class="text-large no-margins no-padding"><b>Año: </b><%= @artwork.year %></p>
         </div>
       </div>
-      
-			<div class="column width-2 content-inner blog-regular">
-				<h4 class="no-margins no-padding center"><%= link_to "← Atrás", :back %></h4>
-        <hr/>
-        <div class="center">
-  				<p class="text-large mb-10">Compartir</p>
-          <%= render partial: 'shared/share_buttons', locals: { sharable_object: @artwork } %>
+      <hr/>
+    	<div class="column width-12 content-inner blog-regular">
+        <div class="row">
+          <div class="column width-2">
+        		<h4 class="no-margins no-padding"><%= link_to "← Atrás", :back %></h4>
+          </div>
+          <div class="column width-7"></div>
+          <div class="column width-3 pull-right right">
+            <div class="row">
+              <div class="column width-6">
+            		<h4 class="no-margins no-padding">Compartir</h4>
+              </div>
+              <div class="column width-6">
+            		<h4 class="no-margins no-padding"><%= render partial: 'shared/share_buttons', locals: { sharable_object: @artwork } %></h4>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <hr/>
-    
+    <div class="div-band"></div>
 	</div>
   
   <% @artist_artworks.each do |artist, artist_artworks| %>
