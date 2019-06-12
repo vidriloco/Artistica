@@ -14,6 +14,14 @@
 						data-no-scale>
             <%= slide.second_heading %>
 					</p>
+          <% unless slide.url.blank? %>
+  					<div class="clear"></div>
+  					<a href="<%= slide.url %>" class="tms-caption button medium text-small text-uppercase border-white color-white bkg-hover-charcoal color-hover-white" 
+  						data-animate-in="preset:slideInRightShort;duration:1000ms;delay:1000ms;"
+  						data-no-scale>
+  						Ver obra
+  					</a>
+          <% end %>
 				</div>
 			</div>
 		</div>

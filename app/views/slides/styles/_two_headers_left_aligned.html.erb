@@ -10,12 +10,14 @@
 					<h1 class="tms-caption color-white title-large weight-bold mb-50" data-no-scale data-animate-in="preset:slideInUpShort;duration:800ms;delay:100ms;">
 						<%= slide.second_heading %>
 					</h1>
-					<div class="clear"></div>
-					<a href="#" class="tms-caption next-full-width-slider button medium text-small text-uppercase border-white color-white bkg-hover-charcoal color-hover-white" 
-						data-animate-in="preset:slideInRightShort;duration:1000ms;delay:1000ms;"
-						data-no-scale>
-						Visitar
-					</a>
+          <% unless slide.url.blank? %>
+  					<div class="clear"></div>
+  					<a href="<%= slide.url %>" class="tms-caption button medium text-small text-uppercase border-white color-white bkg-hover-charcoal color-hover-white" 
+  						data-animate-in="preset:slideInRightShort;duration:1000ms;delay:1000ms;"
+  						data-no-scale>
+  						Visitar
+  					</a>
+          <% end %>
 				</div>
 			</div>
 		</div>
