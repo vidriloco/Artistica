@@ -18,9 +18,9 @@
   			</div>
 				<article class="post no-padding no-margins">
 					<div class="post-media center">
-						<div class="thumbnail gallery" itemscope itemtype="http://schema.org/ImageGallery">
-							<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="<%= url_for(@artwork.image) %>" itemprop="contentUrl" data-size="auto">
+						<div class="thumbnail">
+							<figure itemprop="associatedMedia">
+								<a href="<%= url_for(@artwork.image) %>" class="lightbox-link" itemprop="contentUrl" data-size="auto">
 									<%= image_tag(@artwork.image, itemprop: "thumbnail") %>
 								</a>
 							</figure>
