@@ -8,5 +8,8 @@ test:
  
 amazon:
   service: S3
-  access_key_id: ""
-  secret_access_key: ""
+  access_key_id: <%= Rails.application.secrets.dig(:aws, :access_key_id) %>
+  secret_access_key: <%= Rails.application.secrets.dig(:aws, :secret_access_key) %>
+  region: sfo2
+  bucket: artistica
+  endpoint: 'https://sfo2.digitaloceanspaces.com'
