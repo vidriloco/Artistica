@@ -7,10 +7,14 @@
     <%= render partial: 'application/sections/slides', locals: { slides: @slides } %>
   <% end %>
   
+  <%= render 'application/sections/inspiration_text_one' %>
+  
   <% unless @artwork_by_category.empty? %>
     <%= render partial: 'application/sections/artwork_by_category', locals: { categories: @categories, artworks: @artwork_by_category } %>
   <% end %>
 	
+  <%= render 'application/sections/inspiration_text_two' %>
+  
   <%= render partial: 'application/sections/best-picks', locals: { artworks: @picked_artworks } %>
 	
   <% render 'application/sections/difusion' %>
