@@ -11,13 +11,17 @@
 						  <span class="color-white"><%= artist.phone_number %></span><br>
             <% end %>
 					</p>
-          <br/>
-					<ul class="social-list list-horizontal">
-						<li><a href="#"><span class="icon-twitter-with-circle medium color-theme color-hover-grey"></span></a></li>
-						<li><a href="#"><span class="icon-facebook-with-circle medium color-theme color-hover-grey"></span></a></li>
-						<li><a href="#"><span class="icon-dribbble-with-circle medium color-theme color-hover-grey"></span></a></li>
-						<li><a href="#"><span class="icon-linkedin-with-circle medium color-theme color-hover-grey"></span></a></li>
-					</ul>
+          <% unless artist.twitter_username.blank? && artist.facebook_username.blank? %>
+            <br/>
+  					<ul class="social-list list-horizontal">
+              <% unless artist.twitter_username.blank? %>
+  						  <li><a href="#"><span class="icon-twitter-with-circle medium color-theme color-hover-grey"></span></a></li>
+              <% end %>
+              <% unless artist.facebook_username.blank? %>
+  						  <li><a href="#"><span class="icon-facebook-with-circle medium color-theme color-hover-grey"></span></a></li>
+              <% end %>
+  					</ul>
+          <% end %>
 				</div>
 			</div>
 		</div>
