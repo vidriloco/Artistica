@@ -1,1 +1,3 @@
-<%= image_tag field.stored_data %>
+<% unless field.blank? %>
+  <%= image_tag field.stored_data %>
+<% end %>
