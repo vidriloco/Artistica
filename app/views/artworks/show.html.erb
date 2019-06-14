@@ -68,7 +68,7 @@
     	<div class="row">
     		<div class="column width-12">
     			<div class="row grid content-grid-3">
-            <% artist_artworks.map(&:artwork).each do |artwork| %>
+            <% artist_artworks.map(&:artwork).reject{ |item| item.nil? }.each do |artwork| %>
               <%= render partial: 'artworks/artwork', locals: { artwork: artwork, disable_support_for_picture_sizes: true } %>
             <% end %>
     			</div>
