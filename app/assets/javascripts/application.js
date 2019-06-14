@@ -14,6 +14,3 @@
 //= require jquery_ujs
 //= require timber.master.min
 //= require social-share-button
-//= require photoswipe
-//= require photoswipe-ui-default
-//= require picture-gallery
