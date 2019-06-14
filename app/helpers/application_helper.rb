@@ -44,4 +44,12 @@ module ApplicationHelper
   def seo_for_image_url(object)
     object.image unless object.nil?
   end
+  
+  def should_display_category_list_for(artwork, category_list_is_disabled=false)
+    return artwork.parameterized_category_list unless category_list_is_disabled
+  end
+  
+  def should_respect_disposition_for(artwork, support_for_picture_sizes_is_disabled=false)
+    return artwork.disposition_on_landing_page unless support_for_picture_sizes_is_disabled
+  end
 end

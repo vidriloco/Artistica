@@ -1,8 +1,4 @@
-<% if defined?(disable_support_for_picture_sizes) && disable_support_for_picture_sizes %>
-<div class="grid-item <%= artwork.parameterized_category_list %>">
-<% else %>
-<div class="grid-item <%= artwork.disposition_on_landing_page %> <%= artwork.parameterized_category_list %>">
-<% end %>
+<div class="grid-item <%= should_display_category_list_for(artwork, local_assigns[:category_lists_disabled]) %> <%= should_respect_disposition_for(artwork, local_assigns[:disable_support_for_picture_sizes]) %>">
 	<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#000000" data-hover-bkg-opacity="0.4">
     
 		<a href="<%= artwork_path(artwork.id, artwork.slug) %>">

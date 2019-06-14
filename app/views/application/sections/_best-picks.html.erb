@@ -1,4 +1,4 @@
-<div class="section-block replicable-content padding-bottom no-padding-top">
+<div class="section-block replicable-content padding-bottom">
 	<div class="row flex">
 		<div class="column width-8 push-2 center">
 			<p class="lead">No importa el tipo de creación que estés buscando, tenemos la certeza de que en <b>Artística</b> siempre encontrarás algo nuevo que te sorprenda.</p>
@@ -7,7 +7,6 @@
 </div>
 
 <div class="section-block grid-filter-menu right left-on-mobile no-margins no-padding">
-  <hr>
 	<div class="row no-padding">
 		<div class="column width-12 left">
 			<h3 class="mb-mobile-50">Obras destacadas</h3>
@@ -16,12 +15,13 @@
   <br/>
 </div>
 
-<div class="section-block clearfix no-padding-top">
+<!-- Best picks artwork -->
+<div id="something" class="section-block content-inner blog-masonry grid-container full-width no-margins pt-30 masonry masonry-set-dimensions" data-layout-mode="masonry" data-grid-ratio="1.5" data-set-dimensions data-animate-resize data-animate-resize-duration="0">
 	<div class="row">
-		<div class="column width-12 content-inner blog-regular center">
-      <% artworks.each do |artwork| %>
-        <%= render partial: 'artworks/blog_style_artwork', locals: { artwork: artwork } %>
-      <% end %>
-    </div>
-  </div>
+		<div class="column width-12">
+			<div class="row grid content-grid-3">
+        <%= render partial: 'artworks/artwork', collection: artworks %>
+			</div>
+		</div>
+	</div>
 </div>
