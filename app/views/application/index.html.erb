@@ -7,12 +7,14 @@
     <%= render partial: 'application/sections/slides', locals: { slides: @slides } %>
   <% end %>
   
-  <% unless @artworks.empty? %>
-    <%= render partial: 'application/sections/recent-artwork', locals: { categories: @categories, artworks: @artworks } %>
+  <% unless @artwork_by_category.empty? %>
+    <%= render partial: 'application/sections/artwork_by_category', locals: { categories: @categories, artworks: @artwork_by_category } %>
   <% end %>
 	
   <%= render partial: 'application/sections/best-picks', locals: { artworks: @picked_artworks } %>
-	<% render 'application/sections/difusion' %>
+	
+  <% render 'application/sections/difusion' %>
+  
   <%= render partial: 'application/sections/artists', locals: { artists: @artists } %>
   
 	<%= render 'application/sections/about' %>
