@@ -1,19 +1,31 @@
-<div class="section-block grid-filter-menu right left-on-mobile no-margins no-padding">
-  <hr>
-	<div class="row no-padding">
-		<div class="column width-12 left">
-			<h3 class="mb-mobile-50">Obras destacadas</h3>
+<!-- Content Slider -->
+<div id="content-slider" class="section-block no-margins no-padding-top">
+	<div class="row">
+		<div class="column width-10 offset-1 center">
+			<h3 class="mb-50">Obras destacadas</h3>
+			<div class="tm-slider-container content-slider" data-animation="slide" data-scale-min-height="100" data-scale-under="960" data-width="1250" data-height="800">
+				<ul class="tms-slides">
+          <% artworks.each do |artwork| %>
+					<li class="tms-slide" data-image data-as-bkg-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.1">
+						<div class="tms-content">
+							<div class="tms-content-inner center">
+								<div class="row">
+									<div class="column width-10 offset-1">
+										<h3 class="tms-caption title-medium color-white lspacing-medium mb-5 mb-mobile-30"
+											data-no-scale
+										><%= artwork.title %></h3><br/>
+                    <p class="tms-caption text-xlarge color-white" ><%= artwork.comma_separated_artists %></p>
+                    <h5><%= link_to "Ver obra", artwork_path(artwork.id, artwork.slug), class: "tms-caption button medium text-small text-uppercase border-white color-white bkg-hover-charcoal color-hover-white no-scale" %></h5>
+									</div>
+								</div>
+							</div>
+						</div>
+						<img data-src="<%= url_for(artwork.image) %>" data-retina src="<%= url_for(artwork.image) %>" alt=""/>
+					</li>
+          <% end %>
+				</ul>
+			</div>
 		</div>
 	</div>
-  <br/>
 </div>
-
-<div class="section-block clearfix no-padding-top">
-	<div class="row">
-		<div class="column width-12 content-inner blog-regular center">
-      <% artworks.each do |artwork| %>
-        <%= render partial: 'artworks/blog_style_artwork', locals: { artwork: artwork } %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<!-- Content Slider End -->

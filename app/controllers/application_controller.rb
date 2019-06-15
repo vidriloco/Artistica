@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     @article = Article.last
     @categories = PromotedCategory.on_artworks
     @artwork_by_category = Artwork.all_for(@categories).limit(10)
-    @picked_artworks = Artwork.limit(3).order('created_at DESC')
+    @picked_artworks = ArtistArtwork.best_picks.limit(5).order('created_at DESC').map(&:artwork)
     @artists = Artist.all.limit(3)
   end
 end

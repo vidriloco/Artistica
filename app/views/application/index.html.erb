@@ -15,11 +15,15 @@
 	
   <%= render 'application/sections/inspiration_text_two' %>
   
-  <%= render partial: 'application/sections/best-picks', locals: { artworks: @picked_artworks } %>
-	
+  <% unless @picked_artworks.empty? %>
+    <%= render partial: 'application/sections/best-picks', locals: { artworks: @picked_artworks } %>
+	<% end %>
+  
   <% render 'application/sections/difusion' %>
   
-  <%= render partial: 'application/sections/artists', locals: { artists: @artists } %>
+  <% unless @artists.empty? %>
+    <%= render partial: 'application/sections/artists', locals: { artists: @artists } %>
+  <% end %>
   
 	<%= render 'application/sections/about' %>
 </div>

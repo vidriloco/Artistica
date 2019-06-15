@@ -4,6 +4,7 @@ class CreateArtistArtworks < ActiveRecord::Migration[5.0]
       t.integer     :artist_id
       t.integer     :artwork_id
       t.integer     :index
+      t.boolean     :is_best_pick, default: false
       t.timestamps
     end
     

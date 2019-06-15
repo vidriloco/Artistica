@@ -24,6 +24,10 @@ class Artwork < ApplicationRecord
   def escaped_details
     description.eql?("<p></p>") ? nil : description.html_safe
   end
+  
+  def comma_separated_artists
+    artists.map(&:name).join(", ")
+  end
     
   protected
   
