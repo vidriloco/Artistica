@@ -1,1 +1,1 @@
-<%= image_tag url_for(field.stored_data) %>
+<%= image_tag url_for(field.stored_data) if field.stored_data.attached? %>

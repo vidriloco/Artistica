@@ -20,7 +20,7 @@
 								</div>
 							</div>
 						</div>
-						<img data-src="<%= url_for(artwork.image) %>" data-retina src="<%= url_for(artwork.image) %>" alt=""/>
+						<img data-src="<%= url_for(artwork.image) if artwork.image.attached? %>" data-retina src="<%= url_for(artwork.image) if artwork.image.attached? %>" alt=""/>
 					</li>
           <% end %>
 				</ul>

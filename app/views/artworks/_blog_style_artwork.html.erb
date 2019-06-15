@@ -2,7 +2,7 @@
 	<div class="post-media">
 		<div class="thumbnail">
 			<a class="overlay-link" href="<%= artwork_path(artwork.id, artwork.slug) %>">
-        <%= image_tag(artwork.image) %>
+        <%= image_tag(artwork.image) if artwork.image.attached? %>
 			</a>
 		</div>
 	</div>

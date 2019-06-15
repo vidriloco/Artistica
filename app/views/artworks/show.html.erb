@@ -28,8 +28,8 @@
 					<div class="post-media center">
 						<div class="thumbnail">
 							<figure itemprop="associatedMedia">
-								<a href="<%= url_for(@artwork.image) %>" class="lightbox-link" itemprop="contentUrl" data-size="auto">
-									<%= image_tag(@artwork.image, itemprop: "thumbnail") %>
+								<a href="<%= url_for(@artwork.image) if @artwork.image.attached? %>" class="lightbox-link" itemprop="contentUrl" data-size="auto">
+									<%= image_tag(@artwork.image, itemprop: "thumbnail") if @artwork.image.attached? %>
 								</a>
 							</figure>
 						</div>
