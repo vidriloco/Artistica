@@ -5,7 +5,7 @@
 		</div>
     <div class="column width-12">
     	<div class="row content-grid-3">
-        <%= render partial: 'artists/profile', collection: artists, as: :artist %>
+        <%= render partial: 'artists/profile', collection: artists, as: :artist, locals: { displays_full_bio: false } %>
       </div>
     </div>
   </div>
