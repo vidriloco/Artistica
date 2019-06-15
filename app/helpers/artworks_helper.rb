@@ -6,4 +6,16 @@ module ArtworksHelper
     end
     category_list.chop.chop.html_safe
   end
+  
+  def pricing_for(artwork)
+    if artwork.is_available?
+      if artwork.price.blank?
+        "Precio no publicado"
+      else
+        "$#{artwork.price} MXN"
+      end
+    else
+      "Vendido / No disponible"
+    end
+  end
 end

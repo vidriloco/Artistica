@@ -17,6 +17,8 @@ class ArtworkDashboard < Administrate::BaseDashboard
     year: Field::Number,
     description: Field::Text,
     published: Field::Boolean,
+    price: Field::Number,
+    is_available: Field::Boolean,
     width: Field::Number,
     height: Field::Number,
     image: AttachedField,
@@ -33,6 +35,8 @@ class ArtworkDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
+    :price,
+    :is_available,
     :list_of_tags,
     :image
   ].freeze
@@ -44,6 +48,8 @@ class ArtworkDashboard < Administrate::BaseDashboard
     :list_of_tags,
     :id,
     :year,
+    :price,
+    :is_available,
     :published,
     :width,
     :height,
@@ -60,6 +66,8 @@ class ArtworkDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :title,
     :description,
+    :price,
+    :is_available,
     :width,
     :height,
     :disposition_on_landing_page,

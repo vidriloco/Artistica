@@ -10,6 +10,8 @@
   			<div class="post-content center mb-20">
   				<h1 class="post-title no-margins no-padding"><%= @artwork.title %></h1>
           
+          <p class="text-tiny text-uppercase no-margins no-padding"><%= pricing_for(@artwork) %></p>
+          
       		<div class="post-info">
             <hr/>
       			<span class="post-date">Publicada <%= distance_of_time_in_words_to_now(@artwork.created_at) %></span>/
