@@ -1,0 +1,57 @@
+<div class="section-block replicable-content bkg-grey-ultralight">
+	<div class="row">
+		<div class="column width-4">
+			<h3 class="mb-50">¿Preguntas?</h3>
+		</div>
+		<div class="column width-8">
+			<p class="text-large">Si tienes alguna duda o comentario sobre esta obra, escríbenos un mensaje</p>
+			<a data-content="inline" data-toolbar="" data-aux-classes="tml-contact-modal tml-exit-light" data-modal-mode="" data-modal-width="600" data-lightbox-animation="fadeIn" href="#contact-modal" class="lightbox-link button bkg-theme bkg-hover-theme color-white color-hover-white"><span class="icon-mail left"></span> Escribir mensaje</a>
+		</div>
+	</div>
+</div>
+
+<div id="contact-modal" class="section-block pt-0 pb-30 background-none hide">
+
+	<!-- Title Section-->
+	<div class="section-block pb-0">
+		<div class="row">
+			<div class="column width-10 offset-1">
+				<h1 class="title-medium mb-0">Contacto</h1>
+			</div>
+		</div>
+	</div>
+	<!-- Title Section End -->
+
+	<!-- Form -->
+	<div class="section-block pt-60 pb-0">
+		<div class="row">
+			<div class="column width-10 offset-1">
+				<div class="signup-form-container">
+          <%= form_for Inquiry.new do |i| %>
+            <%= i.hidden_field :artwork_id, value: artwork.id %>
+						<div class="row">
+							<div class="column width-12">
+                <%= i.text_field :name, class: "form-fname form-element large", placeholder: "Nombre" %>
+							</div>
+							<div class="column width-12">
+                <%= i.email_field :email, class: "form-email form-element large", placeholder: "Correo electrónico" %>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column width-12">
+								<div class="field-wrapper">
+                  <%= i.text_area :message, class: "form-message form-element large", placeholder: "Mensaje" %>                                  
+								</div>
+							</div>
+							<div class="column width-12">
+                <%= i.submit "Enviar", class: "form-submit button medium bkg-theme bkg-hover-theme color-white color-hover-white" %>
+							</div>
+						</div>
+          <% end %>
+					<div class="form-response center"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Form End -->
+</div>

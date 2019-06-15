@@ -4,6 +4,7 @@ class Artwork < ApplicationRecord
     
   has_many :artist_artworks
   has_many :artists, through: :artist_artworks
+  has_many :inquiries
   
   validates :title, presence: true
   

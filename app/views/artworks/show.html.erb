@@ -4,7 +4,13 @@
 <!-- Content -->
 <div class="content clearfix">
 	
-	<div class="section-block clearfix no-padding-bottom">
+  <% unless flash[:notice].blank? %>
+    <div class="section-block replicable-content bkg-grey-ultralight padding-top-bottom-30">
+      <h5 class="center no-padding no-margins"><%= flash[:notice].html_safe %></h5>
+    </div>
+  <% end %>
+  
+	<div class="section-block clearfix  no-padding-bottom no-margins">
 		<div class="row">
 			<div class="column width-12 content-inner blog-regular">
   			<div class="post-content center mb-20">
@@ -37,17 +43,23 @@
           <p class="text-large no-margins no-padding"><b>Año: </b><%= @artwork.year %></p>
         </div>
       </div>
-      <hr/>
+    </div>
+  </div>
+  
+  <%= render partial: 'artworks/contact_form', locals: { artwork: @artwork } %>
+	
+  <div class="section-block clearfix mb-60 bkg-grey padding-top-bottom-30">
+		<div class="row">
     	<div class="column width-12 content-inner blog-regular">
         <div class="row">
           <div class="column width-2">
-        		<h4 class="no-margins no-padding"><%= link_to "← Atrás", :back %></h4>
+        		<h4 class="no-margins no-padding color-white"><%= link_to "← Atrás", :back %></h4>
           </div>
           <div class="column width-7"></div>
           <div class="column width-3 pull-right right">
             <div class="row">
               <div class="column width-6">
-            		<h4 class="no-margins no-padding">Compartir</h4>
+            		<h4 class="no-margins no-padding color-white">Compartir</h4>
               </div>
               <div class="column width-6">
             		<h4 class="no-margins no-padding"><%= render partial: 'shared/share_buttons', locals: { sharable_object: @artwork } %></h4>
@@ -57,7 +69,6 @@
         </div>
       </div>
     </div>
-    <div class="div-band"></div>
 	</div>
   
   <% @artist_artworks.each do |artist, artist_artworks| %>

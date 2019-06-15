@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :slides
     resources :artworks
     resources :achievements
+    resources :inquiries
     root to: "artworks#index"
   end
 
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
   
   get '/obras', to: 'artworks#index', as: 'artworks'
   get '/obras/:id(/:slug)', to: 'artworks#show', as: 'artwork'
+  
+  resources :inquiries, only: [:new, :create]
   
   #get '/articulos-y-rutas', to: 'articles#index', as: 'articles'
   #get '/articulos-y-rutas/:id(/:name)', to: 'articles#show', as: 'article'
