@@ -29,6 +29,10 @@ class Artwork < ApplicationRecord
   def comma_separated_artists
     artists.map(&:name).join(", ")
   end
+  
+  def title_for_seo
+    "#{title} por #{comma_separated_artists} - Artistica: galería en la nube"
+  end
     
   protected
   

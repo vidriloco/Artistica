@@ -9,7 +9,7 @@ class SeoForPageDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    page_identifier: Field::Select.with_options(collection: ['main-page', 'articles-index-page', 'popular-index-page', 'artworks-index-page']),
+    page_identifier: Field::Select.with_options(collection: SeoForPage.available_pages),
     title: Field::String,
     description: Field::Text,
     keywords: Field::String,

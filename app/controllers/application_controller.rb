@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end
     
   def index
-    @seo = SeoForPage.find_for_page('main-page')
+    @seo = SeoForPage.main
     @slides = Slide.enabled_for(:landing)
     @article = Article.last
     @categories = PromotedCategory.on_artworks

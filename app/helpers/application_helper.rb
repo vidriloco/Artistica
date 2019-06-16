@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def generic_title_helper
-    "Artistica"
+    "Artistica: galería en la nube"
   end
   
   def current_route 
@@ -9,7 +9,13 @@ module ApplicationHelper
   end
   
   def seo_for_title(object)
-    object.title unless object.nil?
+    return generic_title_helper if object.nil?
+    
+    if object.is_a?(Artwork)
+      object.title_for_seo
+    else
+      object.title
+    end
   end
   
   def year_tag_for(year)
@@ -42,6 +48,12 @@ module ApplicationHelper
   end
   
   def seo_for_image_url(object)
-    object.image unless object.nil?
+    return nil if object.nil?
+    
+    if object.is_a?(Artist) or object.is_a?(Artwork)
+      url_for(object.image) 
+    else
+      object.image
+    end
   end
 end

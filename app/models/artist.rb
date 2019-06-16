@@ -12,6 +12,14 @@ class Artist < ApplicationRecord
     
   before_validation :assign_slug
   
+  def title
+    "#{name} artista en Artistica: galería en la nube"
+  end
+  
+  def content
+    bio
+  end
+  
   protected
   
   def assign_slug

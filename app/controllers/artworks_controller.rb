@@ -13,7 +13,7 @@ class ArtworksController < ApplicationController
   
   def index
     @artworks = Artwork.published.order('created_at DESC')
-    @seo = SeoForPage.find_for_page('artworks-index-page')
+    @seo = SeoForPage.artworks
   end
   
 end
