@@ -51,7 +51,7 @@ module ApplicationHelper
     return nil if object.nil?
     
     if object.is_a?(Artist) or object.is_a?(Artwork)
-      url_for(object.image) 
+      object.image.service_url
     else
       object.image
     end
